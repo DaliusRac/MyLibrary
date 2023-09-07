@@ -1,0 +1,27 @@
+	add(E elementas): Prideda elementą į "HashSet", jei jis dar nėra sąraše.
+	
+	remove(Object objektas): Pašalina nurodytą objektą iš "HashSet", jei jis egzistuoja.
+	
+	contains(Object objektas): Patikrina, ar nurodytas objektas yra "HashSet".
+	
+	isEmpty(): Patikrina, ar "HashSet" yra tuščias.
+	
+	size(): Grąžina "HashSet" elementų skaičių.
+	
+	clear(): Išvalo "HashSet", pašalindamas visus elementus.
+	
+	iterator(): Grąžina iteratorių, kuris leidžia iteruoti per "HashSet" elementus.
+	
+	addAll(Collection<? extends E> kolekcija): Prideda visus elementus iš nurodytos kolekcijos į "HashSet".
+	
+	removeAll(Collection<?> kolekcija): Pašalina visus elementus, kurie yra nurodytoje kolekcijoje, iš "HashSet".
+	
+	retainAll(Collection<?> kolekcija): Palieka tik tuos elementus, kurie yra nurodytoje kolekcijoje, pašalindamas visus kitus iš "HashSet".
+	
+	containsAll(Collection<?> kolekcija): Patikrina, ar "HashSet" visus elementus turi nurodytoje kolekcijoje.
+	
+	toArray(): Grąžina masyvą, kuriame yra visi "HashSet" elementai.
+	
+	equals(Object objektas): Patikrina, ar nurodytas objektas yra lygus "HashSet".
+	
+	hashCode(): Grąžina "HashSet" hash kodą.

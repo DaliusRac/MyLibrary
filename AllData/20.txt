@@ -1,0 +1,90 @@
+HashMap
+
+	• Saugo sąrašą poros key-value reikšmių
+	• Negarantuoja, kad porų eilės tvarka bus visada ta pati
+	• Norint naudoti, reikia importuoti java.util.HashMap
+	• Naudojamas norint išsaugoti objektus (values), kuriuos vėliau 
+	galėsime greit rasti pagal raktus (keys)
+	
+
+HashMap sukūrimas ir porų įdėjimas
+
+	/* Sukuriamas HashMap objektas */
+	HashMap<Integer, String> hmap = new HashMap<Integer, String>();
+
+	/* idedamos poros (key->value) i HashMap */
+	hmap.put(12, "Chaitanya");
+	hmap.put(2, "Rahul");
+	hmap.put(7, "Singh");
+	hmap.put(49, "Ajeet");
+	hmap.put(3, "Anuj");
+
+	System.out.println(hmap);	//49=Ajeet, 2=Rahul, 3=Anuj, 7=Singh, 12=Chaitanya
+
+
+	Reikšmės gavimas pagal raktą
+	
+	String gautaReiksme = hmap.get(12);
+	System.out.println(gautaReiksme);		//Chaitanya
+
+Visų HashMap raktų gavimas
+	
+	Set<Integer> visiRaktai = hmap.keySet();
+	System.out.println(visiRaktai); 	//[49, 2, 3, 7, 12]
+
+
+
+HashMap iteravimas naudojant While
+
+	Set set = hmap.entrySet();
+	Iterator iterator = set.iterator();
+	while(iterator.hasNext()) {
+		Map.Entry mentry = (Map.Entry)iterator.next();
+		System.out.print("key is: "+ mentry.getKey() + " & Value is: ");
+		System.out.println(mentry.getValue());
+	}
+	
+	key is: 49 & Value is: Ajeet
+	key is: 2 & Value is: Rahul
+	key is: 3 & Value is: Anuj
+	key is: 7 & Value is: Singh
+	key is: 12 & Value is: Chaitanya
+
+
+HashMap iteravimas naudojant For
+
+	for (Map.Entry me : hmap.entrySet()) {
+		System.out.println("Key: "+me.getKey() + " & Value: " + me.getValue());
+	}
+
+	key is: 49 & Value is: Ajeet
+	key is: 2 & Value is: Rahul
+	key is: 3 & Value is: Anuj
+	key is: 7 & Value is: Singh
+	key is: 12 & Value is: Chaitanya
+
+
+HashMap dydis
+
+	System.out.println("HashMap dydis: " + hmap.size());
+	
+	HashMap dydis: 5
+	
+
+Poros ištrynimas iš HashMap pagal raktą
+
+	Object removed = hmap.remove(12);
+	System.out.println("Istrinta reiksme: " + removed);
+
+Istrinta reiksme: Chaitanya
+
+
+Kiti HashMap metodai
+
+	• hmap.isEmpty() – grąžina true, jei HashMap yra tuščias
+	• hmap.containsKey(12) – grąžina true, jei HashMap‘e egzistuoja 
+	pora su raktu 12
+	• hmap.containsValue("Singh") – grąžina true, jei HashMap‘e
+	egzistuoja pora su reikšme "Singh„
+	• hmap.clear() – išvalo visą HashMap.
+

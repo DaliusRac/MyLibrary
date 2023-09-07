@@ -1,0 +1,57 @@
+Aritmetiniai operatoriai
+
+	Operatorius Paaiškinimas
+	
++ Sudėtis
+- Atimtis
+* Daugyba
+/ Dalyba
+
+	Jei dalinys ir daliklis abu yra int
+	tipo kintamieji, tada rezultatas
+	bus dalmens sveikoji dalis. Pvz.
+	9/4 rezultatas bus 2
+	Jei norime gauti tikslų rezultatą,
+	turime naudoti float arba double
+	tipo intamuosius
+
+
+% Modulis
+
+	% reiškia dalybos liekaną
+	pvz:
+	int rez = 10 % 3
+	tuomet rez bus 1
+
+
+
+++ Reikšmės padidinimas vienetu
+
+	Nuo to, kurioje kintamojo pusėje yra parašytas
+	aritmetinis operatorius, priklauso kada
+	operacija bus įvykdyta
+
+
+
+-- Reikšmės sumažinimas vienetu
+
+	Nuo to, kurioje kintamojo pusėje yra parašytas
+	aritmetinis operatorius, priklauso kada
+	operacija bus įvykdyta
+
++= Reikšmės priskyrimas pridedant
+-= Reikšmės priskyrimas atimant
+*= Reikšmės priskyrimas padauginant
+/= Reikšmės priskyrimas padalijant
+%= Reikšmės priskyrimas moduliu
+
+Pavyzdys:
+
+	x yra 5, y yra 2
+	vykdomas toks Java sakinys:
+	x += y;
+	reiškia, kad prie x yra pridedama y reikšmė 
+	ir gautas rezultatas (suma) priskiriama x kintamajam.
+	Tą patį rezultatą galima pasiekti tokiu sakiniu:
+	x = x + y;
+

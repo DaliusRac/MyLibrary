@@ -1,0 +1,177 @@
+Java programos struktūra
+
+	• Visos Java programos sudarytos iš keturių pagrindinių elementų: 
+	• Klasių
+	• Metodų
+	• Kintamųjų/atributų
+	• Paketų
+
+Klasės pavyzdys
+
+	public class Animal {
+	}
+
+[modifikatorius] class [vardas] {}
+
+
+Klasės struktūra
+
+	• Java klasė susideda iš dviejų pagrindinių elementų:
+	• metodai, kurie dažnai vadinami funkcijomis arba kitose kalbose –procedūromis
+	• kintamieji, dar vadinami klasės atributais.
+	
+	class Animal {      				//klase
+	
+		 String name;					//kintamasis
+		 
+		 String getName() {				//metodas
+		 return name;
+		 }
+		 
+		void setName(String newName) {	//metodas
+		 name = newName;
+		 }
+	}
+	
+	
+Klasė vs Java byla (*.java)
+
+	• Java byla gali turėti keletą klasių
+	• public klasė *.java byloje turi būti tik viena
+	• public klasės pavadinimas turi sutapti su bylos pavadinimu
+	
+	public class Animal {
+	
+		String name;
+		
+		String getName() {
+				return name; 
+		}
+		void setName(String newName) {
+				name = newName; 
+		} 
+	}
+		
+	class Address {
+	
+		String city;
+		String getCity() {
+			return city; 
+		}
+		void setCity(String newCity) {
+			city = newCity; 
+		} 
+	}
+	
+/////////////////////////////////////////////////
+*************************************************
+/////////////////////////////////////////////////
+
+Metodas main
+
+	Java aplikacijos startuoja main metodu
+
+	public class Pirmoji {
+		public final static void main(String S[]) {
+			System.out.println("Sveikas, Pasauli!");
+		}
+	}
+
+
+Metodai
+
+	Tai kreipiniai į klasę, kurie gali priimti parametrus ir gali grąžinti rezultatą.
+
+	Metodų pavyzdys
+
+	public class Automobilis {
+
+		private String pavadinimas;
+		private int pagaminimoMetai;
+		private float variklioTuris;
+		
+		public String getPavadinimas() { 	//Metodas be parametrų ir grąžinantis 
+			return pavadinimas;				//klasės kintamojo rezultatą
+		}
+		
+		public String automobilioDuomenys(float kaina) { 	//Metodas su parametrai ir grąžinantis 
+															//paskaičiuotą rezultatą
+			String rezultatas = "";
+			
+			rezultatas += pavadinimas;
+			
+			rezultatas += " | ";
+			
+			rezultatas += pagaminimoMetai;
+			
+			rezultatas += " | ";
+			
+			rezultatas += variklioTuris;
+			
+			rezultatas += " | ";
+			
+			rezultatas += kaina;
+			
+			return rezultatas;
+		}
+	}
+	
+	
+Metodo struktūra
+	
+	[modifikatorius] [grąžinamas tipas] [metodo pavadinimas] [parametrai] {}
+	• Modifikatorius – neprivalomas. Gali būti public, private, protected
+	• Grąžinamas tipas – neprivalomas. Jei metodas nieko negrąžina, reikia nurodyti void
+	• Metodo pavadinimas – privalomas. Prasideda mažąja raide
+	• Parametrai – neprivaloma. Jei metodas priima parametrus, jei visi išrašomi per 
+	kalblelį nurodant kiekvieno parametro tipą
+	• Jei metodas grąžina rezultatą, paskutinis metodo sakinys turi būti su žodžiu return
+
+
+Metodų pavyzdžiai
+
+		public void setName(String name) {} // metodas priimantis 1 
+	parametra, bet nieko negrazinantis
+	
+		String getName() {} // metodas nepriimantis jokiu parametru ir 
+	grazinantis String tipo rezultata
+
+		private void calculate(int x, int y, String text) {} // metodas 
+	priimantis 3 parametrus ir nieko negrazinantis
+
+
+Metodų perkrovimas overloading public class Programa {
+
+	Klasė gali turėti kelis metodus su tuo pačiu pavadinimu. Kuris
+	metodas bus išviestas priklauso nuo paduodamų parametrų
+	skaičiaus ir tipo. Metodo grąžinamas tipas neturi įtakos.
+
+
+	public static void main(String[] args) {
+		metodas();
+		metodas(20);
+		metodas(1, 2);
+		metodas("tekstas");
+	}
+	
+	public static void metodas() {
+		System.out.println("metodas be parametru");
+	}
+	
+	public static void metodas(int skaicius) {
+		System.out.println("metodas su vienu int parametru");
+	}
+	
+	public static void metodas(int skaicius1, int skaicius2) {
+		System.out.println("metodas su dviem int parametrais");
+	}
+	
+	public static void metodas(String tekstas) {
+		System.out.println("metodas su vienu String parametru");
+	}
+}
+
+	metodas be parametru
+	metodas su vienu int parametru
+	metodas su dviem int parametrais
+	metodas su vienu String parametru

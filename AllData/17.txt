@@ -1,0 +1,116 @@
+Skirtingi iteravimo būdai
+
+	ArrayList<String> arrlist = new ArrayList<>();
+	arrlist.add("Vilnius");
+	arrlist.add("Kaunas");
+	arrlist.add("Klaipeda");
+	arrlist.add("Siauliai");
+
+	/* Iprastas FOR ciklas */
+	for (int counter = 0; counter < arrlist.size(); counter++) {
+		System.out.println(arrlist.get(counter));
+	}
+
+	/* FOR ciklas masyvams ir sarasams */
+	for (String str : arrlist) {
+		System.out.println(str);
+	}
+
+	/* WHILE ciklas */
+	int count = 0;
+	while (arrlist.size() > count) {
+		System.out.println(arrlist.get(count));
+		count++;
+	}
+
+	/* WHILE + ITERATOR */
+	Iterator<String> iter = arrlist.iterator();
+	while (iter.hasNext()) {
+		System.out.println(iter.next());
+	}
+
+
+Sąrašo String tipo elementų rūšiavimas 
+
+	ArrayList<String> arrlist = new ArrayList<>();
+	arrlist.add("Vilnius");
+	arrlist.add("Kaunas");
+	arrlist.add("Klaipeda");
+	arrlist.add("Siauliai");
+
+	System.out.println(arrlist);
+
+	Collections.sort(arrlist);
+
+	System.out.println(arrlist);
+
+	Collections.sort(arrlist, Collections.reverseOrder());
+
+	System.out.println(arrlist);
+
+
+Vieno sąrašo papildymas kitu sąrašu
+
+	ArrayList<String> pirmasSarasas = new ArrayList<>();
+	pirmasSarasas.add("Vilnius");
+	pirmasSarasas.add("Kaunas");
+	pirmasSarasas.add("Klaipeda");
+	pirmasSarasas.add("Siauliai");
+
+	System.out.println("Pirmas sarasas: " + pirmasSarasas);
+
+	ArrayList<String> antrasSarasas = new ArrayList<>();
+	antrasSarasas.add("Panevezys");
+	antrasSarasas.add("Utena");
+
+	System.out.println("Antras sarasas: " + antrasSarasas);
+
+	pirmasSarasas.addAll(antrasSarasas);
+
+	System.out.println("Papildytas pirmas sarasas: " + pirmasSarasas);
+
+
+Dviejų sąrašo elementų sukeitimas
+
+	ArrayList<String> pirmasSarasas = new ArrayList<>();
+	pirmasSarasas.add("Vilnius");
+	pirmasSarasas.add("Kaunas");
+	pirmasSarasas.add("Klaipeda");
+	pirmasSarasas.add("Siauliai");
+
+	System.out.println("Pirmas sarasas: " + pirmasSarasas);
+
+	Collections.swap(pirmasSarasas, 0, 2);
+
+	System.out.println("Pirmas sarasas po apkeitimo: " + 
+	pirmasSarasas);
+
+
+Primityviųjų tipų elementai sąraše
+
+	• Primityvių tipų reikšmių negalima tiesiogiai įdėti į sąrašą
+	• Į sąrašą dedami tik objektai
+	• Kad galėtume įdėti į sąrašą primityvaus tipo reikšmes, jas turime paversti į objektus
+	• Integer intObjektas = new Integer(5);
+	• Float floatObjektas = new Float(6.4f);
+	• Double doubleObjektas = new Double(5.5d);
+	• Boolean booleanObjektas = new Boolean(true);
+
+
+Primityviųjų tipų elementai sąraše 
+
+	ArrayList<Integer> pirmasSarasas = new ArrayList<>();
+	pirmasSarasas.add(2);
+	pirmasSarasas.add(4);
+	pirmasSarasas.add(new Integer(5));
+	pirmasSarasas.add(6);
+	
+	System.out.println(pirmasSarasas);
+	
+	Integer intObjektas = pirmasSarasas.get(1);
+	
+	int primityvusIntKinatamasis = intObjektas.intValue();
+	
+	System.out.println(primityvusIntKinatamasis);
+
+

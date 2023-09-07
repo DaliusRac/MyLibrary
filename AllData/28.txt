@@ -1,0 +1,184 @@
+Cast: primityvieji tipai
+
+	• Automatinis tipo konvertavimas
+	• byte → short → int → long → float → double
+	• Išreikštinis tipo konvertavimas
+	• double → float → long → int → short → byte
+
+
+Automatinis tipo konvertavimas
+
+	int i = 100;
+	long l = i; // no explicit type casting required
+	float f = l; // no explicit type casting required
+	System.out.println("Int value " + i);
+	System.out.println("Long value " + l);
+	System.out.println("Float value " + f);
+	
+	//Int value 100
+	//Long value 100
+	//Float value 100.0 
+	
+	float f = 22.20f; 
+	double d = f; // no explicit type casting required
+	System.out.println("Float value " + f);
+	System.out.println("Double value " + d);
+	
+	//Float value 22.2
+	//Double value 22.200000762939453
+
+
+Išreikštinis tipo konvertavimas
+
+	double d = 100.04;
+	long l = (long) d; //explicit type casting required
+	int i = (int) l; //explicit type casting required
+	
+	System.out.println("Double value " + d);
+	System.out.println("Long value " + l);
+	System.out.println("Int value " + i);
+	
+	//Double value 100.04
+	//Long value 100
+	//Int value 100 
+	double d = 22.99;
+	float f = (float) d; //explicit type casting required
+	
+	System.out.println("Double value " + d);
+	System.out.println("Float value " + f);
+	
+	//Double value 22.99
+	//Float value 22.99
+	
+	
+Cast: objektai
+
+	• Upcasting
+	• Downcasting
+	
+	class Gyvunas {
+	
+		public void esti() {
+			// ... 
+		}
+	}
+	
+	class Katinas extends Gyvunas {
+	
+		@Override
+		public void esti() {
+			// ... 
+		}
+		
+		public void miau() {
+			// ... 
+		}
+	}
+
+
+Upcasting 
+
+	// Sukuriame katino objekta, kuris paveldi visas gyvuno savybes
+	Katinas katinas = new Katinas();
+	
+	// Keiciame tipa i tevini, t.y. Gyvuno tipa.
+	// cast operacija nereikalinga, nes gyvunas yra abstraktesnis
+	// katinas turi viska ta pati, ka ir turi gyvunas.
+	// Java tai suprant ir nereikia isreikstinai nieko nurodyti
+	Gyvunas gyvunas = katinas;
+	
+	// Galima naudoto cast operatoriu, kodas kompiliuosis ir veiks,
+	// taciau upcasting atveju cast operatorius nere reikalingas
+	
+	Gyvunas gyvunas2 = (Gyvunas) katinas;
+	
+	katinas.miau();
+	katinas.esti();
+	
+	gyvunas.esti();
+	// negalime gyvunui kviesti miau() metodo, nes jis nera katinas pagal tipa
+	// reikia konvertuoti i katina
+	
+	gyvunas2.esti();
+	//negalime gyvunui2 kviesti miau() metodo, nes jis nera katinas pagal tipa
+	//reikia konvertuoti i katinas
+	
+	
+Downcasting 
+
+	// Sukuriame katino objekta, kuris paveldi visas gyvuno savybes
+	Katinas katinas = new Katinas();
+
+	// Pakeiciame tipa i gyvuna
+	Gyvunas gyvunas = katinas;
+
+	gyvunas.esti();
+	// negalime gyvunui kviesti esti() metodo, nes jis nera katinas pagal tipa
+	// reikia konvertuoti i katina
+
+	// konvertuojame gyvuna i katina naudodami cast operatoriu
+	// tai yra downcasting
+	Katinas katinas2 = (Katinas) gyvunas;
+
+	//dar geriau yra patikrinti, ar gyvunas tikrai gali buti konvertuojamas i 
+	//katina
+	if (gyvunas instanceof Katinas) {
+		katinas2 = (Katinas) gyvunas;
+	}
+
+	// katinui2 jau galime kviesti ir gyvuno, ir katino metodus 
+	katinas2.esti();
+	katinas2.miau();
+
+
+Downcasting: trumpas būdas
+
+	Katinas katinas = new Katinas();
+	
+	Gyvunas gyvunas = katinas;
+	
+	// Jei mums po cast operacijos reikes iskviesti vos viena katino metoda,
+	// tada galime naudoti trumpesni cast uzrasa
+	((Katinas) gyvunas).miau();
+
+
+Downcasting: dar vienas būdas
+
+	Katinas katinas = new Katinas();
+	
+	Gyvunas gyvunas = katinas;
+	
+	Katinas katinas2 = Katinas.class.cast(gyvunas);
+
+
+Downcasting: ko nedaryti 
+
+	// Sukuriame gyvuno objekta, kuris nieko nezino apie katina
+	// nes katino klase yra hierarchiskai zemiau pagal paveldejima
+	Gyvunas gyvunas = new Gyvunas();
+
+	// jei bandome konvertuoti i Katina, zinoma tai mums nepavyks, nes
+	// gyvunas nera katinas. Kodas kompiliuojasi, bet paleidus programa
+	// gauname klaida ClassCastException
+	Katinas katinas = (Katinas) gyvunas;
+
+	// siuo atveju nuo klaidos gelbsti pries konvertavima atliekamas
+	// patikrinimas, ar gyvunas yra katinas
+	if (gyvunas instanceof Katinas) {
+		katinas = (Katinas) gyvunas;
+	}
+
+Cast operacijos sintaksė
+
+	Gyvunas gyvunas = new Katinas();
+	
+	
+
+	Katinas 		katinas = 		(Katinas) 	gyvunas;
+		^				^				^			^
+		^			Katinas tipo		^		Gyvunas tipo
+	Turi būti 		objektas 		Turi būti	objektas
+	ta pati 						ta pati
+	klasė<------------------------->klasė
+
+

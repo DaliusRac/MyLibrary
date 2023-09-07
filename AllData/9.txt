@@ -1,0 +1,93 @@
+Masyvas
+
+	• Tai duomenų tipas, susidedantis iš to paties tipo elementų
+	• Įtraukiant duomenis į masyvą turi būti žinomas masyvo dydis
+	• Masyvas indeksuojamas nuo 0
+
+
+Masyvo kintamojo apibrėžimas 
+
+	byte[] anArrayOfBytes;
+	short[] anArrayOfShorts;
+	long[] anArrayOfLongs;
+	float[] anArrayOfFloats;
+	double[] anArrayOfDoubles;
+	boolean[] anArrayOfBooleans;
+	char[] anArrayOfChars;
+	String[] anArrayOfStrings;
+
+
+Galimi skirtingi būdai, bet antrojo varianto reikėtų vengti
+	
+	float[] anArrayOfFloats;
+	float anArrayOfFloats[];
+	
+	
+Masyvo inicializavimas
+
+	anArray = new int[10];
+	sukuriamas masyvas su 10 vietų, skirtų int tipo skaičiams
+
+
+Elementų į masyvą įdėjimas
+
+	anArray[0] = 100; 
+	anArray[1] = 200; 
+	anArray[2] = 300; 
+	
+	100 	200 	300
+	0 		1 		2 		3 	4 	5 	6 	7 	8 	9
+
+
+Masyvo elementų panaudojimas
+
+	System.out.println("Element 1 at index 0: " + anArray[0]);
+	System.out.println("Element 2 at index 1: " + anArray[1]);
+	System.out.println("Element 3 at index 2: " + anArray[2]);
+
+	// Element 1 at index 0: 100
+	// Element 2 at index 1: 200
+	// Element 3 at index 2: 300
+
+
+Masyvo inicializavimas iškart
+
+	int[] anArray = { 
+		100, 200, 300,
+		400, 500, 600, 
+		700, 800, 900, 1000
+	};
+	
+	
+Dvimačiai masyvai
+	String[][] names = {
+		{"Mr. ", "Mrs. ", "Ms. "},
+		{"Smith", "Jones"}
+	};
+	
+	System.out.println(names[0][0] + names[1][0]); // Mr. Smith
+	System.out.println(names[0][2] + names[1][1]); // Ms. Jones
+
+	0 			1 			2
+0 	Mr. 		Mrs. 		Ms. 
+1 	Smith 		Jones
+
+
+Masyvo ilgis
+
+	System.out.println(anArray.length);
+
+
+Masyvo elementų kopijavimas
+
+	class ArrayCopyDemo {
+	
+		public static void main(String[] args) {
+			char[] copyFrom = { 'd', 'e', 'c', 'a', 'f', 'f', 'e',
+								'i', 'n', 'a', 't', 'e', 'd' };
+			char[] copyTo = new char[7];
+			
+			System.arraycopy(copyFrom, 2, copyTo, 0, 7);
+			System.out.println(new String(copyTo));
+		}
+	}

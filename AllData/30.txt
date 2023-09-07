@@ -1,0 +1,234 @@
+Problema
+
+	• Programa gali "sulūžti" daugeliu atvejų:
+	• Netinkamai konvertuojant tipus
+	• Reikšmės nebuvimas
+	• Pasibaigia atmintis
+	• Begalinė rekursija
+	• ...
+
+
+Galimas sprendimas
+
+	• Galime parašlyti daug if'ų, kad po kiekvieno žingsnio tikrintų ar yra reikšmė, ar 
+	neatliekama dalyba iš nulio, ar tipas konvertuojamas tinkamai ir t.t.
+	• Bet tokiu atveju kodas paskęs klaidų apdorojime ir taps labai sunkiai 
+	skaitomas.
+	• Vis tiek gali likti nenumatytų situacijų
+	• Klaidų apdorojimą bus sunku modifiksuoti
+
+
+Java sprendimas
+
+	• Naudoti išimtinių situacijų (exception - išimtis) mechanizmą
+	• Programos įprastas kodas bus atskiriamas nuo klaidų apdorojimo kodo
+	• Java kalbos sakiniai try-catch-finally, throw
+
+
+Išimtinės situacijos atsiradimas
+
+	• Kai vykdoma operacija ar metodo kvietimas, kurio sėkminga baigtis 
+		neįmanoma
+	• Išreikštiniu būdu iššaukiant situaciją Java sakiniu:
+		• throw new Exception();
+
+
+Išimties vystymasis
+
+	• Programos normalus vykdymas nutraukiamas ir sukuriamas išimtį 
+		apibūdinantis objektas (exception)
+	• Jei nesiimama priemonių, programos darbas užbaigiamas išvedant diagnostinį 
+		pranešimą
+
+
+Kaip sukelti išimtį
+
+	int z = 5 / 0;
+	
+*** Exception in thread "main" java.lang.ArithmeticException: / by zero ***
+	at Programa.main(Programa.java:7)
+
+
+Kaip sukelti išimtį
+
+	throw new Exception("labai didele klaida");
+	
+***	Exception in thread "main" java.lang.Exception: labai didele klaida ***
+	at Programa.main(Programa.java:7)
+	
+
+try-catch-finally
+
+	Scanner sc = new Scanner(System.in);
+	int i = sc.nextInt();
+	try {											//Galimai nesaugus
+kodas
+		int z = 5 / i;
+		System.out.println("z: " + z);
+	} catch (ArithmeticException e) {				//Klaidos tipas
+		System.out.println("Dalyba is nulio");		//Veiksmai, jei įvyko klaida
+	} finally {
+		sc.close();									//Veiksmai atliekami tiek klaidosatveju, tiek ir jei klaidos nėra
+		System.out.println("scanneris uzdarytas");
+	}
+	
+	
+Kelių tipų klaidų apdorojimas
+
+	try {
+		int z = 5 / 0;
+		String tekstas = null;
+		tekstas.indexOf('A');
+	
+	} catch (NullPointerException e) {
+		System.out.println("Nera reiksmes");
+	
+	} catch (ArithmeticException e) {
+		System.out.println("Dalyba is nulio");
+	
+	} catch (Exception e) {
+		System.out.println("Nezinoma klaida");
+	}
+	
+	***Skirtingų tipų klaidos.	***
+		Anksčiau turi būti gaudoma
+		vaikinė klasė, vėliau tėvinė.
+		
+
+Kelių tipų klaidų apdorojimas
+
+	try {
+		int z = 5 / 0;
+		String tekstas = null;
+	tekstas.indexOf('A');
+	} catch (NumberFormatException | NullPointerException e) {
+		System.out.println("klaida");
+	} 
+
+
+Vidinis try-catch-finally blokas
+
+	try {
+		try {
+			int z = 5 / 0;
+		} catch (ArithmeticException e) {
+			System.out.println("Dalyba is nulio");
+		}
+	} catch (Exception e) {
+		System.out.println("Nezinoma klaida");
+	} 
+
+
+Išimties objektas
+
+	• Saugo informaciją apie klaidą
+	• Paveldi klasę java.lang.Throwable
+	• Turi konstruktorius, metodus išgauti klaidos vietą, pranešimo tekstą, priežastį 
+	ir pan.
+	• Išvestinės klasės specializuoja klaidas ir gali suteikti papildomą informaciją
+	• Patiems iššaukiant situacijas naudinga naudoti savo apibrėžtas išimčių klases
+
+
+Svarbiausios išimčių klasės
+
+	• Trowable – išimčių superklasė
+	• Error – išreiškia paprastai neapdorojamas klaidas
+	• Eception – klaidos, kurios privalo būti deklaruojamos ir apdorojamos (checked)
+	• RuntimeException – kompiliatoriaus nekontroliuojamos klaidos – gali įvykti 
+		bet kada. Apdorojamos esant reikalui
+
+
+Catch blokų tvarka
+
+	• Nusako išimčių tinkamumo tikrinimo eiliškumą
+	• Blokas pagauna išimtį, jei išimties objektas gali būti priskirtas catch dalyje 
+	nurodytam tipui
+	• Kompiliatorius traktuoja kaip klaidingą catch blokų išdėstyme, jei superklasės 
+	klaida gaudoma anksčiau, nei subklasės
+
+
+Veiksmai apdorojant pagautą išimtį
+
+	• Naivusis – išvesti diagnostinį pranešimą ir nutraukti programos vykdymą
+	• Optimistinis – ištaisyti situaciją ir toliau tęsti programą
+	• Realistinis – jei klaida nepataisoma, catch bloke sakiniu trow pakartotinai 
+	iššaukti išimtį, naudojant tą patį situacijos objektą arba sukurianr naują, tikintis 
+	apdorojimo kitame kodo lygmenyje
+
+
+Išimties iššaukimas
+
+	public static void main(String[] args) throws ArithmeticException {
+		int i = 0;
+		try {
+			int z = 5 / 0;
+		} catch (ArithmeticException e) {
+			System.out.println("Dalyba is nulio, pataisyti nepavyks");
+			throw e;
+		}
+	}
+
+
+Savo apsibrėžta išimties klasė
+
+	• Reikalingas, kai norime specializuoti išimtį, kad klientinė dalis galetų 
+	išskirti ją iš kitų situacijų ir atitinkamai reaguotų
+	• Kai norime papildyti Exception klasę specifine informacija
+
+
+Apsibrėžiame išimties klasę 
+
+	class AccountException extends Exception {
+	
+		private int balance = 0;
+		
+		public AccountException() {
+		}
+		
+		public AccountException(String message) {
+			super(message);
+		}
+		
+		public AccountException(String message, int balance) {
+			super(message);
+			this.balance = balance;
+		}
+		
+		public int getBalance() {
+			return balance;
+		}
+	}
+
+
+Panaudojame išimties klasę kode 
+
+	class Account {
+		private int balance = 100;
+		
+		public void withdraw(int amount) throws AccountException {
+			if (balance - amount >= 0) {
+				balance -= amount;
+			} else {
+				throw new AccountException("Nepakanka pinigu", balance - amount);
+			}
+		}
+	}
+
+
+Panaudojame išimties klasę kode 
+
+	public static void main(String[] args) {
+		Account a = new Account();
+		try {
+			a.withdraw(90);
+			System.out.println("Pinigai nuskaityti");
+			a.withdraw(50);
+			System.out.println("Pinigai nuskaityti");
+		
+		} catch (AccountException e) {
+			System.out.println("Klaida. Po nuskaitymo balansas butu: " + e.getBalance());
+		}
+	}
+	
+	****	Pinigai nuskaityti	****
+	Klaida. Po nuskaitymo balansas butu: -40

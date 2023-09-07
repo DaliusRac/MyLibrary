@@ -1,0 +1,86 @@
+LocalDateTime/LocalDate
+
+	• LocalDateTime – tai datos ir laiko duomenų tipas
+	• LocalDate – tai tik datos duomenų tipas
+	• LocalTime – tai tik laiko duomenų tipas
+
+
+Reikalingi import
+
+	import java.time.LocalDateTime;
+	import java.time.LocalDate;
+
+
+Pavyzdžiai
+
+	LocalDateTime laikas = LocalDateTime.now(); // 2018-07-09T22:49:49.280
+	
+	System.out.println(laikas.getDayOfMonth()); // 9
+	System.out.println(laikas.getHour()); // 22
+	System.out.println(laikas.getMonth()); // JULY
+	LocalDate data = laikas.toLocalDate();
+	System.out.println(data); // 2018-07-09
+	LocalDateTime naujasLaikas = laikas.plusDays(6);
+	System.out.println(naujasLaikas); // 2018-07-15T22:49:49.280
+
+
+DateTimeFormatter 
+
+	LocalDate siandien = LocalDate.now(); // 2018-07-09
+	String formatuotaSiandien = siandien.format(DateTimeFormatter.BASIC_ISO_DATE);
+	
+	System.out.println(formatuotaSiandien); // 20180709
+	
+	DateTimeFormatter formateris = DateTimeFormatter.ofPattern("yyyy!!MM!!dd");
+	formatuotaSiandien = siandien.format(formateris);
+	
+	System.out.println(formatuotaSiandien); // 2018!!07!!09
+
+
+Laiko įvedimas 
+
+	DateTimeFormatter f = DateTimeFormatter.ofPattern("HH:mm");
+	
+	System.out.println("Iveskite laika: ");
+	Scanner sc = new Scanner(System.in);
+	
+	String textFromConsole = sc.next();
+	
+	sc.close();
+	
+	LocalTime time = LocalTime.parse(textFromConsole, f);
+	
+	System.out.println("Ivestas laikas: " + time);
+	System.out.println("pridejus viena valanda bus: " + time.plusHours(1));
+
+
+Datų palyginimas naudojant isBefore ir isAfter 
+
+	LocalDate zalgirioMusis = LocalDate.of(1410, 7, 15);
+	LocalDate saulesMusis = LocalDate.of(1236, 9, 22);
+	
+	if (zalgirioMusis.isBefore(saulesMusis)) {
+		System.out.println("Zalgirio musis ivyko anksciau");
+	}
+	
+	if (zalgirioMusis.isAfter(saulesMusis)) {
+		System.out.println("Zalgirio musis ivyko veliau");
+	}
+
+
+Datų palyginimas naudojant compareTo 
+
+	LocalDate zalgirioMusis = LocalDate.of(1410, 7, 15);
+	LocalDate saulesMusis = LocalDate.of(1236, 9, 22);
+
+	int compareToRezultatas = zalgirioMusis.compareTo(saulesMusis);
+
+	if (compareToRezultatas > 0) {
+		System.out.println("Zalgirio musis ivyko veliau");
+	} else if (compareToRezultatas == 0) {
+		System.out.println("Abu musiai vyko tuo paciu metu");
+	} else {
+		System.out.println("Zalgirio musis ivyko anksciau");
+	}
+
+

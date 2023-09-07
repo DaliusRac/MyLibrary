@@ -1,0 +1,99 @@
+Metodas String.format
+
+	• Tai statinis String klasės metodas
+	• Kviečiamas nekuriant String tipo objekto (taip pat kaip visi statiniai  metodai)
+	• Metodas skirtas formatuoti tekstą
+
+
+String.format pavyzdys
+
+	String formatuotaEilute = String.format("Mano vardas %s. Dabar vyksta %d-oji %s pamoka", "Martynas", 8, "Java");
+	
+	System.out.println(formatuotaEilute); // Mano vardas Martynas. Dabar vyksta 8-oji Java pamoka
+
+
+String.format specifikatoriai
+
+Specifier 		Applies to 									Output
+%b 				Any type 									“true” if non-null, “false” if null
+%c 				character 									Unicode character
+%d 				integer (incl. byte, short, int, long) 		Decimal Integer
+%f 				floating point 								decimal number
+%s 				any type 									String value
+
+
+Skaičių formatavimas
+
+	String.format("%d", 93); 			// 93
+	String.format("|%20d|", 93); 		// | 93|
+	String.format("|%-20d|", 93); 		// |93 |
+	String.format("|%020d|", 93); 		// |00000000000000000093|
+	String.format("%.2f", 93.12678f); 	// 93,13
+
+
+Eilutės formatavimas
+
+	String.format("|%s|", "Hello World"); 		// Hello World
+	String.format("|%15s|", "Hello World"); 	// | Hello World|
+	String.format("|%-15s|", "Hello World"); 	// |Hello World |
+
+
+Specalieji String simboliai
+
+	Escape Sequence 	Description
+	\t 					Insert a tab in the text at this point.
+	\n 					Insert a newline in the text at this point.
+	\' 					Insert a single quote character in the text at this point.
+	\" 					Insert a double quote character in the text at this point.
+	\\ 					Insert a backslash character in the text at this point.
+
+
+Specialusis simbolis \t
+
+	System.out.println("Labas\tVakaras");
+	
+	Labas Vakaras
+
+
+Specialusis simbolis \n
+
+	System.out.println("Labas\nVakaras");
+	
+	Labas
+	Vakaras
+
+Specialusis simbolis \‘
+
+	System.out.println("Labas \'Vakaras\'");
+
+	Labas 'Vakaras'
+
+
+Specialusis simbolis \“
+
+	System.out.println("Labas \"Vakaras\"");
+
+	Labas "Vakaras"
+
+
+Specialusis simbolis \\
+
+	System.out.println("Labas\\Vakaras\\
+
+	Labas\Vakaras\
+
+
+System.out.println vs. \n
+	
+	System.out.println("Vienas");
+	System.out.println("Du");
+	System.out.println("Trys");
+			
+			Arba
+			
+	System.out.println("Vienas\nDu\nTrys");
+
+	Vienas
+	Du
+	Trys
+

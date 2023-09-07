@@ -1,0 +1,105 @@
+Pridėti elementą: add(elementas) - prideda elementą į LinkedList pabaigą. Pavyzdžiui: 
+
+	LinkedList<String> sarasas = new LinkedList<>(); sarasas.add("Pirmas");
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Gauti elementą: get(indexas) - grąžina elementą, esantį nurodyto indekso pozicijoje. Pavyzdžiui: 
+
+	String elementas = sarasas.get(0);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Atnaujinti elementą: set(indexas, elementas) - pakeičia elementą, esantį nurodyto indekso pozicijoje, nauju elementu. Pavyzdžiui: 
+
+	sarasas.set(0, "Naujas");
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Pašalinti elementą: remove(indexas) - pašalina elementą, esantį nurodyto indekso pozicijoje. Pavyzdžiui: 
+
+	sarasas.remove(0);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Patikrinti ar yra elementas: contains(elementas) - patikrina, ar LinkedListe yra nurodytas elementas. Grąžina true, jei elementas yra, ir false, jei nėra. Pavyzdžiui: 
+
+	boolean yraElementas = sarasas.contains("Pirmas");
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Gauti dydį: size() - grąžina LinkedList dydį, t. y. joje esančių elementų skaičių. Pavyzdžiui: 
+
+	int dydis = sarasas.size();
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Patikrinti ar sąrašas yra tuščias: isEmpty() - patikrina, ar LinkedList yra tuščias. Grąžina true, jei sąrašas yra tuščias, ir false, jei ne. Pavyzdžiui: 
+
+	boolean arTuscias = sarasas.isEmpty();
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Pridėti elementą į pradžią: addFirst(elementas) - prideda elementą į LinkedList pradžią. Pavyzdžiui: 
+
+	sarasas.addFirst("Pirmas");
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Pridėti elementą į pabaigą: addLast(elementas) - prideda elementą į LinkedList pabaigą. Pavyzdžiui: 
+
+	sarasas.addLast("Paskutinis");
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Gauti pirmą elementą: getFirst() - grąžina pirmąjį elementą LinkedListe. Pavyzdžiui: 
+
+	String pirmasElementas = sarasas.getFirst();
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Gauti paskutinį elementą: getLast() - grąžina paskutinį elementą LinkedListe. Pavyzdžiui: 
+
+	String paskutinisElementas = sarasas.getLast();
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Pašalinti pirmą elementą: removeFirst() - pašalina pirmąjį elementą iš LinkedList. Pavyzdžiui: 
+
+	sarasas.removeFirst();
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Pašalinti paskutinį elementą: removeLast() - pašalina paskutinį elementą iš LinkedList. Pavyzdžiui: 
+
+	sarasas.removeLast();
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Iteravimas per sąrašą: Galima naudoti ciklus, pvz., for arba foreach, norint peržiūrėti visus sąrašo elementus. Pavyzdžiui:
+
+	for (String elementas : sarasas) {
+   
+   System.out.println(elementas);
+	}
+	
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Gauti pirmojo arba paskutinio elemento indeksą: indexOf(elementas) ir lastIndexOf(elementas) - grąžina pirmojo arba paskutinio pasitaikančio nurodyto elemento indeksą. Jei elemento nėra sąraše, grąžinamas -1. Pavyzdžiui:
+
+	int pirmojoIndeksas = sarasas.indexOf("Pirmas");
+	int paskutinioIndeksas = sarasas.lastIndexOf("Paskutinis");
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Gauti dalinį sąrašą: subList(nuo, iki) - grąžina dalinį sąrašą, kuris apima elementus nuo nurodyto indekso (įskaitant) iki nurodyto indekso (neįskaitant). Pavyzdžiui:
+
+	List<String> dalinisSarasas = sarasas.subList(1, 4);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Konvertuoti į masyvą: toArray() - konvertuoja LinkedList į masyvą. Pavyzdžiui:
+
+	String[] masyvas = sarasas.toArray(new String[0]);
+///////////////////////////////////////////////////////////////////////////////////////////////////	
+	
+Suformuoti sąrašą iš masyvo: addAll(Arrays.asList(masyvas)) - sukuria sąrašą iš masyvo elementų ir prideda juos prie LinkedList. Pavyzdžiui:
+
+	String[] masyvas = {"Vienas", "Du", "Trys"};
+	sarasas.addAll(Arrays.asList(masyvas));
+///////////////////////////////////////////////////////////////////////////////////////////////////
+	
+Apkeisti sąrašo elementus vietomis: Collections.reverse(sarasas) - apkeičia sąrašo elementus vietomis. Pavyzdžiui:
+
+	Collections.reverse(sarasas);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Rūšiuoti sąrašą: Collections.sort(sarasas) - rūšiuoja sąrašą didėjimo tvarka, remiantis elementų natūralia eiliškumu arba naudojant Comparator. Pavyzdžiui:
+
+	Collections.sort(sarasas);
+///////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,103 @@
+byte
+
+	• byte – nedidelis sveikas skaičius
+	• nuo -128 iki 127 
+	• Pavyzdžiai: 0, 1, 32, 101, …
+	• Numatytoji reikšmė: 0
+	• Dydis atmintyje 1 baitas (8 bitai)
+	• Java:
+	byte x = 32;
+
+
+short
+
+	• short – sveikas skaičius
+	• nuo -32768 iki 32767 
+	• Pavyzdžiai: 0, 1, -45, 1024, …
+	• Numatytoji reikšmė: 0
+	• Dydis atmintyje 2 baitai (16 bitų)
+	• Java:
+	short x = 4;
+
+
+int
+
+	• int – sveikas skaičius
+	• nuo -2147483648 iki 2147483647
+	• Pavyzdžiai: 0, 1, -45, 80987, …
+	• Numatytoji reikšmė: 0
+	• Dydis atmintyje 4 baitai (32 bitai)
+	• Java:
+	int x = 4;
+
+
+long
+
+	• long – didelis sveikas skaičius
+	• nuo -922372036854775808 iki 922372036854775807 
+	• Pavyzdžiai: 0, 1, 5000000001, …
+	• Numatytoji reikšmė: 0
+	• Dydis atmintyje 8 baitai (64 bitai)
+	• Java:
+	long x = 4;
+	long x = 4l;
+	long x = 4L;
+
+
+float
+
+	• float – slankaus kablelio skaičius
+	• nuo -3.40282348 x 1038 iki 3.40282347 x 1038
+	• Pavyzdžiai: -0.35f, 3.141592654f, …
+	• Numatytoji reikšmė: 0.0f
+	• Dydis atmintyje 4 baitai (32 bitai)
+	• Java:
+	float x = 3.14f;
+	float x = 3.14F;
+
+
+double
+
+	• double – didelis slankaus kablelio skaičius
+	• nuo -1.79769313486231570x 10308
+	iki 1.79769313486231570x 10308
+	• Pavyzdžiai: -0.35d, 3.141592654d, …
+	• Numatytoji reikšmė: 0.0d
+	• Dydis atmintyje 8 baitai (64 bitai)
+	• Java:
+	double x = 3.14d;
+	double x = 3.14D;
+
+
+char
+
+	• char – skaičius, skirtas aprašyti unicode simbolius
+	• nuo 0 iki 65536
+	• Pavyzdžiai: 'Ą', 104, '\u0104' …
+	• Numatytoji reikšmė: '\u0000'
+	• Dydis atmintyje 2 baitai
+	• Java:
+	char x = 'C';
+
+	Pavyzdys, kaip tą patį simbolį galima
+	užrašyti keliais skirtingais būdais
+
+	char x = "Ą";
+	char y = "\u0104";
+	char z = 104;
+
+	********	atspausdinus x , y arba z gausime tą patį simbolį Ą	********
+
+
+boolean
+
+	• boolean – loginis duomenų tipas
+	• Galimos tik dvi reikšmės: true arba false
+	• Numatytoji reikšmė: false
+	• Dydis atmintyje 1 bitas
+	• Java:
+	boolean x = true;
+	boolean x = false;
+
+
+

@@ -1,0 +1,77 @@
+Problema 
+
+	public class VarargTest {
+		
+		public static void main(String[] args) {
+		
+			int suma1 = sudetiSkaicius(1, 2);
+			int suma2 = sudetiSkaicius(1, 2, 5);
+			int suma3 = sudetiSkaicius(1, 2, 4, 6);
+			
+			System.out.println(suma1);
+			System.out.println(suma2);
+			System.out.println(suma3);
+		}
+		private static int sudetiSkaicius(int a, int b) {
+			return a + b;
+		}
+		private static int sudetiSkaicius(int a, int b, int c) {
+			return a + b + c;
+		}
+		private static int sudetiSkaicius(int a, int b, int c, int d) {
+			return a + b + c + d;
+		}
+	}
+	
+	
+		***	Metodas kviečiamas perduodant parametrus.	***
+			Skirtingais atvejais gali reikėti metodų su
+			skirtingu skaičiumi parametrų. Tam turime
+			parašyti daug beveik vienodų metodų su
+			skirtingu parametrų skaičiumi.
+
+
+
+Problemos sprendimas 
+
+	public class VarargTest {
+		
+		public static void main(String[] args) {
+		
+			int suma1 = sudetiSkaicius(1, 2);
+			int suma2 = sudetiSkaicius(1, 2, 5);
+			int suma3 = sudetiSkaicius(1, 2, 4, 6);
+			
+			System.out.println(suma1);
+			System.out.println(suma2);
+			System.out.println(suma3);
+		}
+		
+		private static int sudetiSkaicius(int... skaiciai) {
+			int rez = 0;
+			for (int i : skaiciai) {
+				rez += i;
+			}
+			return rez;
+		}
+	}
+
+
+Varags sintaksė
+
+	• void metodoPavadinimas(String x, String y, int... z) {
+	
+		// z naudojamas taip pat kaip masyvas, pvz:
+		int suma = z[0] + z[1];
+		}
+	
+	• Reikia nepamiršti, kad z gali būti tuščias
+	• Varargs – visada paskutinis parametras metodo parametrų sąraše
+
+
+Jau naudojome varags
+
+	• String.format("This is an integer: %d", myInt);
+	• String.format("This is an integer: %d and a string: %s", myInt, myString);
+
+

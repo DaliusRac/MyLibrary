@@ -1,0 +1,29 @@
+
+StringBuilder sb = new StringBuilder("Labas vakaras");
+
+
+	sb.reverse()					Apsuka paduota String
+	
+	sb.append()						Prideda paduota String 
+	
+	sb.length()						Gražina int reikšmę(kuria reikia priskirti) kuri nurodo paduoto String ilgi
+	
+	sb.indexOf()					Gražina int reikšmę(kuria reikia priskirti) kuri nurodo pirmą sutikta paduoto String vieta
+	
+	sb.lastIndexOf("a")				Gražina	int reikšmę(kuria reikia priskirti) kuri nurodo pirmą sutikta paduoto String vieta skaiciuojant nuo galo link priekio
+	
+	sb.lastIndexOf("a", 5)			Gražina	int reikšmę(kuria reikia priskirti) kuri nurodo pirmą sutikta paduoto String vieta pradėdamas nuo paduoto int indexo skaiciuojant nuo galo link priekio
+	
+	sb.toString()					Gražina suformuota String reikšmę(kuria reikia priskirti)		
+	
+	sb.substring(6)					Gražina String reikšmę(kuria reikia priskirti) nuo paduoto indexo iki galo
+	
+	sb.substring(6, 8)				Gražina String reikšmę(kuria reikia priskirti) pagal paduotas indexo kordinates
+	
+	sb.delete(3, 6)					Ištrina simbolius pagal paduotas index koordinates
+	
+	sb.deleteCharAt(3)				Ištrina simbolį pagal paduota index'a
+	
+	sb.insert(6, "rytas")			Iterpia paduotus simbolius nuo nurodyto index'o
+	
+	sb.replace(3, 6, "ai ")			Pakeičia simbolius pagal nurodytas index koordinates į nurodytus simbolius

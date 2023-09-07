@@ -1,0 +1,75 @@
+Konstruktoriai
+
+	• Konstruktorius yra skirtas sukonstruoti duotos klasės tipo objektą.
+	• Konstruktorius gali turėti parametrų
+	• Konstruktorius nieko negrąžina (net nerašomas void)
+	• Konstruktoriaus vardas privalo sutapti su klasės vardu
+	• Klasė gali turėti kelis konstruktorius
+	• Jei nėra aprašytas nei vienas konstruktorius, pagal nutylėjimą klasė 
+	turi konstruktorių be parametrų
+	• Konstruktoiai įprastai būna public
+
+
+Konstruktoriaus pavyzdys
+
+	public class Automobilis {
+		private String pavadinimas;
+		
+		Automobilis() {
+		}
+		
+		Automobilis(String pavadinimas) {
+			this.pavadinimas = pavadinimas;
+		}
+	}
+
+
+
+Konstruktorius this() 
+
+	public class Automobilis {
+		private String pavadinimas;
+		private LocalDateTime sukurimoData;
+		
+		Automobilis() {
+			sukurimoData = LocalDateTime.now();
+		}
+		
+		Automobilis(String pavadinimas) {
+			this();
+			this.pavadinimas = pavadinimas;
+		}
+		
+		public String getPavadinimas() {
+			return pavadinimas;
+		}
+		
+		public void setPavadinimas(String pavadinimas) {
+			this.pavadinimas = pavadinimas;
+		}
+		
+		public LocalDateTime getSukurimoData() {
+			return sukurimoData;
+		}
+		
+		public void setSukurimoData(LocalDateTime sukurimoData) {
+			this.sukurimoData = sukurimoData;
+		}
+	}
+	
+	*****	this() iškviečia kitą tos pačios klasės	******
+			Konstruktorių. Kurį konstruktorių 
+			Kviesti priklauso nuo parametrų.
+
+
+Konstruktorius this()
+
+	public class Programa {
+	
+		public static void main(String[] args) {
+			
+			Automobilis automobilis = new Automobilis("Tesla");
+			
+			System.out.println(automobilis.getSukurimoData());
+		}
+	}

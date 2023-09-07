@@ -1,0 +1,39 @@
+Duomenų įvedimas su Scanner
+
+	import java.util.Scanner;
+	
+	class InputTest {
+	 
+		 public static void main(String[] args) {
+		 
+			 Scanner sc = new Scanner(System.in);
+			 
+			 System.out.println("Iveskite varda:");
+			 String vardas = sc.next();
+			 
+			 System.out.println("Iveskite ugi:");
+			 double ugis = sc.nextDouble();
+			 
+			 System.out.println("Vardas: " + vardas + " ugis: " + ugis);
+			 
+			 sc.close();
+		 }
+	}
+
+Duomenų įvedimas
+
+	public String next() returns next token from scanner
+
+	public String nextLine() moves scanner posision to the next line and returns value as string
+
+	public byte nextByte() scans next token as byte
+
+	public short nextShort() scans next token as short value
+
+	public int nextInt() scans next token as int value
+
+	public long nextLong() scans next token as long value
+
+	public float nextFloat() scans next token as  float value
+
+	public double nextDouble() scans next token as double value

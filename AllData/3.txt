@@ -1,0 +1,114 @@
+Apie String klasę
+
+	• String tipo klasės objektas apibrėžia eilutės simbolių seką
+	• String klasė yra java.lang pakete, kuris nereikalauja jo importavimo 
+	sakinio
+	• Kaip ir kitos klasės, String turi aibę konstruktorių ir metodų.
+	• Skirtingai nuo kitų klasių, String objektams galima taikyti dvi 
+	operacijas: + ir +=, kurios apjungia eilutes.
+
+Eilutės
+
+	• Apibrėžiamos parašant tekstą kabutėse: “Tai tiesioginė eilutė”
+	• Nekviečia konstruktoriaus.
+	• Gali būti priskirtos String tipo kintamiesiems.
+	• Gali būti perduotos konstruktorių ir eilučių parametrais.
+	• Turi aibę naudingų String klasės metodų.
+
+Eilučių pavyzdžiai
+
+	//priskiriame eilutę kintamajam
+	String miestas = "Vilnius";
+	//kviečiame eilutes metodą
+	char pirmojiRaide = "Vilnius".charAt(0);
+	//kviečiame String kintamojo metodą
+	char pirmasisSimbolis = miestas.charAt(0);
+
+	Simbolis V i l n i u s
+	Indeksas 0 1 2 3 4 5 6
+	Jei bandysime gauti simbolį su didesniu indeksu, tada gausime klaidą:
+	Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 8
+
+String nekintamumas
+
+	• Kartą sukurta, eilutė negali būti pakeista
+	• Objektai pasižymintys tokia savybe vadinami nekintamais
+	(immutable)
+	• Nekintami objektai patogūs tuo, kad visos nuorodos į juos yra saugios, 
+	nes nėra pavojaus, kad objekto turinys pakito ir skirtingos nuorodos 
+	žymi skirtingo turinio objektą.
+
+Tuščios eilutės
+
+	• Tuščia eilutė neturi nei vieno simbolio; jos ilgis lygus 0.
+	String word1 = "";           //Empty strings
+	String word2 = new String();  // Empty strings
+
+	• Tuščia eilutė skiriasi nuo neinicijuotos:
+	private String errorMsg;      //errorMsg yra null
+
+Konstruktorius su tuščiu parametrų sąrašu 
+
+	• Toks konstruktorius sukuria tuščią eilutę. Naudojamas retai
+	• Dažniau tokiu atveju naudojama tuščia eilutė
+	• Tuščia eilutė dažnai yra analogas pradinės nulinės reikšmės kaupiant 
+	sumą.
+	String tuščia = new String(); String tuščia = "";
+
+Eilutės kopijavimas panaudojant konstruktorių
+
+	• Egzistuojančios eilutės kopija gaunama kreipiantis į konstruktorių 
+	perduodant parametru kopijuojamos eilutės objektą. Taip pat retai 
+	naudojama.
+	• Skiriasi nuo priskyrimo operatoriaus.
+	String zodis = new String(“Java”);
+	String zodis2 = new String(zodis);
+
+	Priskiriant: abu kintamieji tampa nuorodomis į tą pačią eilutę.
+	String zodis = “Java”;
+	String zodis2 = zodis;
+
+Kiti konstruktoriai
+
+	Galima naudoti masyvą, kad sukurti eilutę
+	char[] raides = {'J', 'a', 'v', 'a'};
+	String zodisIsRaidziu = new String(raides);
+	byte[] baitai = {0x4a, 0x61, 0x76, 0x61};
+	String zodisIsBaitu = new String(baitai);
+
+Metodas replace
+
+	• String zodis2 = zodis1.replace(senaChar, nujaChar);
+	• grąžina naują eilutę, kurioje zodis1 eilutėje visi senaChar simboliai pakeisti naujaChar 
+	simboliu
+	String zodis1 = "mama";
+	String zodis2 = zodis1.replace('m'
+	, 
+	'p'); 
+	// zodis2 yra "papa", o zodis1 lieka "mama"
+
+	Nepamiršti, kad String yra „kitokia“ klasė
+	• String atvejis išskirtinis, nes inicijavimas atliekamas 
+	nenaudojant new operatoriaus. Tai padaryta sąmoningai, nes 
+	eilutės yra vienas dažniausiai naudojamų bet kokioje 
+	programavimo kalboje elementų ir norisi, kad darbas su 
+	eilutėmis būtų kuo paprastesnis. 
+	• String objektai yra nekintantys: visi metodai atliekantys 
+	manipuliacijas su tekstu, grąžina naują String objektą.
+
+klasės metodai:
+
+	• .substring()
+	• .charAt()
+	• .replace()
+	• .indexOf()
+	• .equals()
+	• .compareTo()
+	• .trim()
+	• .toLowerCase()
+	• .toUpperCase()
+
+**************************************
+**************************************
+			Smulkiau, kaip naudoti String klases metodus ziureti
+			Pagrindinis meniu ---> Funkcionalumas --->String

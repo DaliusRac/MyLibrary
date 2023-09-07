@@ -1,0 +1,78 @@
+null
+
+	• null žymi neegzistuojantį objektą
+	• null objektas neturi jokių kintamųjų ir metodų, todėl su juo 
+	negalime atlikti jokių veiksmų
+	• Jei bandysime panaudoti neegzistuojantį objektą null (pvz. kviesime 
+	jo metodą), tai gausime NullPointerException klaidą
+
+
+null 
+
+	public class NullTestIncorrect {
+	
+		public static void main(String[] args) throws ArithmeticException {
+		
+			A a = null;
+			a.metodasA();
+		}
+	}
+	
+	class A {
+		public void metodasA() {
+			System.out.println("iskviestas metodas A");
+		}
+	}
+	
+	
+	Exception in thread "main" java.lang.NullPointerException
+	at CastTest.main(CastTest.java:8)
+	
+	
+///////////////////////////////////////////////	
+	
+	
+	
+	public class NullTestCorrect {
+		
+		public static void main(String[] args) throws ArithmeticException {
+			
+			A a = new A();
+			a.metodasA();
+		}
+	}
+	
+	class A {
+		public void metodasA() {
+			System.out.println("iskviestas metodas A");
+		}
+	}
+	
+	
+	// iskviestas metodas A
+
+
+Patikrinimas ar ne null 
+
+	public class NullTestCheck {
+
+		public static void main(String[] args) throws ArithmeticException {
+
+			A a = null;
+
+			if (a != null) {
+			a.metodasA();
+			}
+			
+			a = new A();
+			
+			if (a != null) {
+				a.metodasA();
+			}
+		}
+	}
+	class A {
+		public void metodasA() {
+			System.out.println("iskviestas metodas A");
+		}
+	}

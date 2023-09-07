@@ -1,0 +1,27 @@
+String.format()
+
+	%s - naudojamas įterpti tekstines eilutes. Pavyzdžiui: String name = "John"; System.out.printf("Sveiki, %s!", name);
+
+	%d - naudojamas įterpti skaičius. Pavyzdžiui: int age = 25; System.out.printf("Mano amžius yra %d.", age);
+
+	%f - naudojamas įterpti slankiojo kablelio skaičius. Pavyzdžiui: double height = 1.75; System.out.printf("Mano ūgis yra %.2f metrų.", height);
+
+	%c - naudojamas įterpti vieną simbolį. Pavyzdžiui: char grade = 'A'; System.out.printf("Pažymys: %c", grade);
+
+	%b - naudojamas įterpti boolean reikšmes. Pavyzdžiui: boolean isCorrect = true; System.out.printf("Ar teisinga? %b", isCorrect);
+
+	%n - naudojamas įterpti naujos eilutės simbolį. Pavyzdžiui: System.out.printf("Pirmoji eilutė%nAntra eilutė");
+	
+	%x - naudojamas įterpti šešioliktainį skaičių. Pavyzdžiui: int number = 255; System.out.printf("Skaičius šešioliktainėje sistemoje: %x", number);
+
+	%o - naudojamas įterpti aštuntainį skaičių. Pavyzdžiui: int number = 15; System.out.printf("Skaičius aštuntainėje sistemoje: %o", number);
+
+	%e arba %E - naudojamas įterpti mokslinį slankiojo kablelio skaičių. Pavyzdžiui: double number = 1.23e+10; System.out.printf("Mokslinis skaičius: %e", number);
+
+	%g arba %G - naudojamas įterpti slankiojo kablelio skaičių su trumpesniu formatu (jei galima). Pavyzdžiui: double number = 123.456; System.out.printf("Trumpesnis skaičius: %g", number);
+
+	%s - naudojamas įterpti objektą kaip tekstą. Pavyzdžiui: Date now = new Date(); System.out.printf("Dabartinė data ir laikas: %s", now);
+
+	%t - naudojamas įterpti datos ir laiko informaciją. Jis gali būti naudojamas kartu su kitais žymenimis. Pavyzdžiui: Date now = new Date(); System.out.printf("Data ir laikas: %tD %tT", now, now);
+
+	%% - naudojamas įterpti simbolį "%". Pavyzdžiui: System.out.printf("Procento simbolis: %%");

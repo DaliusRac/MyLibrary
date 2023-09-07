@@ -1,0 +1,70 @@
+Kas yra Interfeisas?
+
+	• Interfeisas yra pilna abstrakcija
+	• Interfeisas atrodo kaip klasė, bet nėra klasė.
+	• Interfeisas gali turėti tik metodų aprašus, t.y. be kūno (lygiai taip, kaip 
+	abstraktūs metodai abstrakčiose klasėse).
+	• Interveiso metodai visada būna public, todėl žodžio public galime nerašyti.
+	• Visi interfeiso kintamieji gali būti tik public static final, t.y. interfeisas gali 
+	turėti tik konstantas.
+	• Interfeisas žymimas žodžiu interface
+	• interface Animal {...}
+	• Kaip ir abstrakčiai klasei, taip ir interfeiso pagrindu negalime kurti objekto, ty
+	negalime sakyti new Animal(); kai Animal yra interfeisas.
+
+
+	• Interfeise gali būti tik tokie nariai:
+	• Laukai
+	• Abstraktūs metodai
+	• Kiekvienas interfeiso laukas (by default) yra public static final, todėl nėra 
+	būtina rašyti šių modifikatorių
+	• Laukų reikšmių negalima keisti, todėl tai yra konstantos
+	• Kiekvienas interfeiso metodas (by default) yra public abstract, todėl nėra 
+	būtina rašyti šių modifikatorių
+	• Klasė gali paveldėti tik vieną klasę, bet tokia pati klasė gali implementuoti 
+	kelis interfeisus
+	• Interfeisas gali paveldėti kitus interfeisus
+
+
+
+
+	interface Gyvunas {
+		String skleidziamasGarsas();
+	}
+
+	class Suo implements Gyvunas {
+		@Override
+		public String skleidziamasGarsas() {
+		return "Au";
+		}
+	}
+
+	class Katinas implements Gyvunas {
+		@Override
+		public String skleidziamasGarsas() {
+		return "Miau";
+		}
+	}
+
+	class Bite implements Gyvunas {
+		@Override
+		public String skleidziamasGarsas() {
+		return "Bzzz";
+		}
+	}
+
+	public class GyvunasAbstract {
+		public static void main(String[] args) {
+			Gyvunas suo = new Suo();
+			Gyvunas katinas = new Katinas();
+			Gyvunas bite = new Bite();
+			
+			System.out.println("Suns garsas: " + suo.skleidziamasGarsas());
+			System.out.println("Katino garsas: " + katinas.skleidziamasGarsas());
+			System.out.println("Bites garsas: " + bite.skleidziamasGarsas());
+		}
+	}
+	
+	****** 		Suns garsas: Au		******
+				Katino garsas: Miau
+				Bites garsas: Bzzz

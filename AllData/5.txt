@@ -1,0 +1,132 @@
+Konstantos
+
+	• Tai klasės dalys, kurios negali būti keičiamos (priskiriama kita reikšmė)
+	• public static final double PI = 3.141592653589793;
+	• Aprašoma tik didžiosiomis raidėmis. Jei sudaro keli žodžiai, atskiriama 
+	apatiniu brūkšniu. TIKSLUS_SKAICIUS_PI
+	• Priskiriama programos paleidimo metu
+
+Konstantos pavyzdys 
+
+	public class ConstantTest {
+	
+	public static final double PI = 3.141592653589793;
+	public static final String SKUBUS_PRANESIMAS = "Labai skubus pranesimas!";
+	
+		public static void main(String[] args) {
+			
+			System.out.println(PI); // 3.141592653589793
+			System.out.println(SKUBUS_PRANESIMAS); // Labai skubus pranesimas!
+			
+			double skaicius = PI;
+			String pranesimas = SKUBUS_PRANESIMAS; 
+			
+			System.out.println(skaicius); // 3.141592653589793
+			System.out.println(pranesimas); // Labai skubus pranesimas!
+		}
+	}
+
+		*********PI = 3.4D;**** // The final field ConstantTest.PI cannot *******
+							// be assigned - taip daryti NEGALIMA
+							
+							
+Iš kitos klasės galima pasiekti
+public konstantas užrašius taip:
+
+	String mesage = ConstantTest.SKUBUS_PRANESIMAS;
+
+
+final kintamieji
+
+	• Modifikatorius final prie kintamojo reiškia, kad kintamojo reikšmė 
+	nekis – ji galutinė 
+
+	• Kintamajam reikšmę galima priskirti jį deklaruojant 
+
+	• Jei reikšmę priskiria kompiliatorius, kintamojo vardas rašomas 
+	didžiosiomis raidėmis, t.y. Konstanta
+	final float MANO_PI=3.14;
+
+	•final modifikatorius nustato, kad kintamojo reikšmė negali būti
+	pakeista. Šis kintamasis iš karto turi būti inicijuojamas ir bet kuris 
+	bandymas į keisti iššauks kompiliavimo klaidą. final modifikatorius 
+	paprastai naudojamas apibrėžti konstantas. 
+
+
+	class F {
+		final int j = 10;
+		
+		// kiti kintamieji <...>
+		F() {
+			// kodas ...
+		}
+		
+		F(int i) {
+			// kodas .
+		}
+		
+		F(Object o) {
+			// kodas ...
+		}
+		// kiti konstruktoriai ir metodai <...>
+	}
+	
+	
+Galima deklaruoti final
+kintamąjį ir jam iš karto priskirti 
+reikšmę.
+
+/////////////////////////////////////////////////
+
+	class F {
+		final int j;
+		
+		F() {
+			this.j = 1;
+		}
+		
+		F(int i) {
+			this.j = i;
+		}
+		
+		F(Object o) {
+			this.j = 1;
+		}
+	}
+
+Galima deklaruoti tuščią final
+kintamąjį, o jam reikšmę priskirti 
+kiekviename konstruktoriuje
+
+////////////////////////////////////////////////
+
+Jei kintamasis ne primityviojo, o objektinio tipo, negalima jam priskirti kito objekto, 
+tačiau patį objektą modifikuoti galima
+
+static final kintamasis
+
+
+	• Raktų pora static final rodo, kad tai konstanta visiems klasės 
+	objektams
+	static final float MANO_PI = 3.14f;
+
+final metodas
+
+	• Jei metodas yra final, jo negalima perrašyti paveldėtose klasėse 
+	• Privatūs metodai ir taip yra final net nerašant raktinio žodžio 
+	• Jei final parašysime prie klasės, tai iš jos negalima paveldėti
+
+
+	class A {
+		final int metodas() {
+			return 5;
+		}
+	}
+
+	class B extends A {
+		// perrašymas negalimas
+		int metodas() {
+			return 6;
+		}
+	}
+

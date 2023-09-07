@@ -1,0 +1,87 @@
+Klases laukų paveldėjimas 
+
+	class A {
+		int i = 1;
+		
+		String metodas() {
+			return "A";
+		}
+	}
+	
+	class B extends A {
+		int i = 100;
+		
+		@Override
+		String metodas() {
+			return "B";
+		}
+	}
+	
+	B objektas = new B();
+	System.out.println(objektas.i); // 100
+	System.out.println(objektas.metodas()); // B
+
+	A kitasObjektas = new B();
+	System.out.println(kitasObjektas.i); // 1
+	System.out.println(kitasObjektas.metodas()); // B
+
+
+Polimorfizmas
+
+	• Situacija, kai objekto reakciją į metodo kvietimą nulemia objekto 
+	tipas vadinamas polimorfizmu. 
+	• Polimorfizmas įgalina: 
+	• programuoti apibendrintai, realizacijos detales apibrėžiant išvestinėse 
+	klasėse
+	• specializuoti/modifikuoti klasės funkcionavimą išvestinėje klasėje.
+	• Java kalboje kiekvienas paveldėtos klasės objektas gali būti 
+	naudojamas ten, kur reikalingas tėvinės klasės objektas
+	• Privalumai:
+	• Programinis kodas lengvai rašomas ir skaitomas 
+	• Klasės sąsaja vienoda, tipų specifika svarbi realizacijoje
+	• Trūkumai:
+	• Jei reikia vaikinės klasės savybių, tada reikia atlikti cast operaciją
+
+
+Polimorfizmas 
+
+	abstract class Car {
+		abstract void go();
+	}
+	class Bus extends Car {
+		@Override
+		void go() {
+		System.out.println("Bus goes...");
+		}
+	}
+	class Train extends Car {
+		@Override
+		void go() {
+		System.out.println("Train goes...");
+		}
+	}
+	
+	
+	
+	public class RunCars {
+	
+		public static void main(String[] args) {
+		
+			Train a = new Train();
+			Bus b = new Bus();
+			Car c = new Bus();
+		
+			makeMove(a);
+			makeMove(b);
+			makeMove(c);
+		}
+		static void makeMove(Car c) {
+			c.go();
+		}
+	}
+	
+	*****	Train goes...	*****
+			Bus goes...
+			Bus goes...
+
+

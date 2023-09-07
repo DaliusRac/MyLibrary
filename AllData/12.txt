@@ -1,0 +1,129 @@
+static
+
+	• static metodus galima iškviesti nesukūros objekto
+	• Metodai su static žyme yra laikomi algoritmais, kuriems nėra reikalingi 
+	objekto duomenys ir metodai. Statiniams metodams ir kintamiesiems 
+	paskiriama statinė atmintis
+
+
+Statinio kintamojo panaudojimo pavyzdys
+
+	public class Account {
+	
+		// klases attributai
+		private int amount;
+		private int number;
+		private static int numberOfAccounts;
+		
+		// konstruktorius
+		public Account() {
+		
+			this.number = numberOfAccounts;
+			numberOfAccounts++;
+		}
+		
+		public void deposit(int amount) {
+			this.amount += amount;
+		}
+		
+		public void withdraw(int amount) {
+			this.amount -= amount;
+		}
+		
+		public int getAmount() {
+			return this.amount;
+		}
+		
+		public int getNumber() {
+			return this.number;
+		}
+		
+		public void setAmount(int a) {
+			this.amount = a;
+		}
+	}
+	
+	public class StaticVariable {
+	
+		public static void main(String[] args) {
+			Account account = new Account();
+			System.out.println(account.getNumber()); // 0
+			new Account();
+			new Account();
+			new Account();
+			new Account();
+			account = new Account();
+			System.out.println(account.getNumber()); // 5
+			account = new Account();
+			System.out.println(account.getNumber()); // 6
+		}
+	}
+
+
+Statiniai atributai ir metodai
+
+	• Bendri visai klasei
+	• Bendri visiems klasės objektams
+	• Pasiekiama ne per objektą, o per klasę
+	Account.createAccount();
+	• Naudojama globaliems duomenims bei veiksmams aprašyti
+
+
+Statinių ir dinaminių narių palyginimas
+
+	• Daugeliu atvejų apibrėždami metodus mes nevartojome 
+	modifikatoriaus static. Šiuo atveju metodas interpretuojamas 
+	dinaminiu (pagal nutylėjimą)
+
+
+Statinių ir dinaminių metodų kvietimas
+
+	• Statiniai metodai ir kintamieji kviečiami tiesiog rašant pastovų klasės 
+	pavadinimą
+	
+		Account.createAccount();
+	
+	• Dinaminis metodas ir kintamasis kviečiamas naudojant klasės 
+	egzemplioriaus pavadinimą
+	
+		Account account = new Account();
+		int amount = account.getAmount();
+	
+	• Kadangi ta pati klasė gali turėti daug egzempliorių skirtingais 
+	pavadinimais, tai ir to paties metodo ar kintamojo kvietimai atrodys 
+	skirtingai.
+	
+		account1.getAmount(); … account2.getAmount();
+
+
+static privalumai
+
+	• Visi kintamieji ir metodai turi būti apibrėžti klasėje, statinis 
+	modifikatorius pažymi tuos metodus ir kintamuosius, kurie 
+	nepriklauso nuo egzemplioriaus. 
+	• Kuriant naują egzempliorių (objektą) neišskiriama nauja vieta 
+	statiniams klasės metodams ir kintamiesiems ir jie visi prieinami pagal 
+	fiksuotą klasės pavadinimą. 
+	• Statiniai kintamieji analogiški kitose kalbose naudojamiems global 
+	kintamiesiems, skirtumas tik tas, kad jie prieinami tik žinant ir 
+	panaudojant klasės pavadinimą.
+	
+
+Statinio ir ne statinio metodų pavyzdys
+
+	class A {
+		void fun1() {
+			System.out.println("Hello I am Non-Static");
+		}
+		static void fun2() {
+			System.out.println("Hello I am Static");
+		}
+	}
+	
+	class Person {
+		public static void main(String args[]) {
+			A oa = new A();
+			oa.fun1(); 			// non static method
+			A.fun2(); 			// static method
+		}
+	}

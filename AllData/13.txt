@@ -1,0 +1,192 @@
+String vs StringBuilder 
+
+	• String – nemodifikuojami objektai
+	• StringBuilder – modifikuojami objektai
+
+	
+	public static void main(String[] args) {
+
+		String eilute1 = "tekstas";
+		String eilute2 = new String("tekstas");
+		
+		eilute1.toUpperCase();  //Objekto būsena/reikšmė nekinta.
+		
+		System.out.println(eilute1); // tekstas
+		
+		StringBuilder sb = new StringBuilder("tekstas");
+		sb.reverse();
+		
+		System.out.println(sb); // satsket
+	}
+	
+String vs StringBuilder 
+
+	public static void main(String[] args) {
+	
+		String eilute1 = "tekstas";
+		String eilute2 = new String("tekstas");
+		
+		eilute1.toUpperCase(); 		//Objekto būsena/reikšmė nekinta.
+		
+		System.out.println(eilute1); // tekstas
+		
+		StringBuilder sb = new StringBuilder("tekstas");
+		sb.reverse();
+		
+		System.out.println(sb); // satsket
+	}
+	
+
+Metodas reverse
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	
+	sb.reverse();   //Modifikuojamas pats sb objektas
+	
+	System.out.println(sb); // sarakav sabaL
+	
+	
+Metodas append 
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	sb.append("VAKARAS");
+
+	System.out.println(sb); // Labas vakarasVAKARAS
+
+	sb.append('Q');		//Modifikuojamas pats sb objektas.
+	sb.append(9);
+	sb.append(true);
+
+	System.out.println(sb); // Labas vakarasVAKARASQ9true
+
+	sb.append('A').append('B').append('C');
+
+	System.out.println(sb); // Labas vakarasVAKARASQ9trueABC
+	
+
+Metodas length
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	int ilgis = sb.length();
+
+	System.out.println(ilgis); // 13
+	
+	** 	Objektas sb nėra 			**
+		modifikuojamas. Funkcija 
+		grąžina reikšmę, kurią
+		reikia priskirti int tipo
+		kintamajam
+		
+
+Metodas indexOf
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	int va = sb.indexOf("va");
+	
+	System.out.println(va); // 6
+	
+	*** Objektas sb nėra      		**
+		modifikuojamas. Funkcija 
+		grąžina reikšmę, kurią
+		reikia priskirti int tipo
+		kintamajam.
+		
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	int va = sb.indexOf("va", 7);
+	
+	System.out.println(va);   // -1
+
+
+Metodas lastIndexOf
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	int va = sb.lastIndexOf("a");
+	
+	System.out.println(va); // 11
+	
+	
+	****  	Objektas sb nėra 	****
+			modifikuojamas. Funkcija 
+			grąžina reikšmę, kurią
+			reikia priskirti int tipo
+			kintamajam.
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	int va = sb.lastIndexOf("a", 5);
+	
+	System.out.println(va); // 3
+	
+
+Metodas toString
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	String eilute = sb.toString();
+	
+	System.out.println(eilute); // Labas vakaras
+	
+	**** 	Objektas sb nėra 	****
+			modifikuojamas. Funkcija 
+			grąžina reikšmę, kurią
+			reikia priskirti String tipo
+			kintamajam.
+			
+Metodas substring
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	String eilute = sb.substring(6);
+
+	System.out.println(eilute); // vakaras
+
+	String eilute2 = sb.substring(6, 8);
+
+	System.out.println(eilute2); // va
+	
+	*** Objektas sb nėra 	***
+		modifikuojamas. Funkcija 
+		grąžina reikšmę, kurią
+		reikia priskirti String tipo
+		kintamajam.
+
+
+Metodas delete
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	sb.delete(3, 6);
+	
+	System.out.println(sb); // Labvakaras
+	
+	*** Modifikuojamas pats **
+		sb objektas.
+
+
+Metodas deleteCharAt
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	sb.deleteCharAt(3);
+	
+	System.out.println(sb); // Labs vakaras
+	
+	*** Modifikuojamas pats **
+		sb objektas
+
+Metodas insert
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	sb.insert(6, "rytas");
+	
+	System.out.println(sb); // Labas rytasvakaras
+	
+		*** Modifikuojamas pats ***
+			sb objektas.
+
+Metodas replace
+
+	StringBuilder sb = new StringBuilder("Labas vakaras");
+	sb.replace(3, 6, "ai ");
+	
+	System.out.println(sb); // Labai vakaras
+	
+		*** Modifikuojamas pats ***
+			sb objektas.
+
+

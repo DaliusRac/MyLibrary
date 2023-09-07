@@ -1,0 +1,73 @@
+LinkedList
+
+	• Elementai sujungti ir eina vienas po kito
+	• Visada galime gauti pirmąjį ir paskutinįjį elementus
+
+	// sukuriamas tuscias susietas sarasas
+	LinkedList<String> sujungtasSarasas = new LinkedList<String>();
+
+	// i sarasa dedami elementai
+	sujungtasSarasas.add("vasaris");
+	sujungtasSarasas.add("kovas");
+	sujungtasSarasas.add("balandis");
+	sujungtasSarasas.add("geguze");
+
+	System.out.println(sujungtasSarasas);
+
+	// idedame elementus i sarso i pradzia ir i pabaiga
+	sujungtasSarasas.addFirst("SAUSIS");
+	sujungtasSarasas.addLast("BIRZELIS");
+
+	System.out.println(sujungtasSarasas);
+	// istriname pirma ir paskutini elementus
+	sujungtasSarasas.removeFirst();
+	sujungtasSarasas.removeLast();
+
+	System.out.println(sujungtasSarasas);
+	// idedame ir istriname pagal indeksa
+	sujungtasSarasas.add(0, "Dar vienas menuo");
+	sujungtasSarasas.remove(2);
+
+	// dar yra removeFirst() ir removeLast() metodai, 
+	// kurie istrina pirma ir paskutini elementus
+
+	System.out.println(sujungtasSarasas);
+
+	// grazina saraso pirmaji elementa ir ji istrina is saraso
+	String menuo = sujungtasSarasas.poll();
+	System.out.println(menuo);
+	System.out.println(sujungtasSarasas);
+
+	// grazina saraso pirmaji elementa ir ji istrina is saraso
+	menuo = sujungtasSarasas.pollFirst();
+	System.out.println(menuo);
+	System.out.println(sujungtasSarasas);
+
+	// grazina saraso pirmaji elementa ir ji istrina is saraso
+	menuo = sujungtasSarasas.pollLast();
+	System.out.println(menuo);
+	System.out.println(sujungtasSarasas);
+
+
+Push & Pop
+
+	• Push – deda elementą į sąrašo pradžią
+	• Pop – išima pirmąjį sąrašo elementą
+	
+	LinkedList<String> sujungtasSarasas = new LinkedList<String>();
+
+	sujungtasSarasas.add("vasaris");
+	sujungtasSarasas.add("kovas");
+	sujungtasSarasas.add("balandis");
+	sujungtasSarasas.add("geguze");
+
+	System.out.println(sujungtasSarasas);
+
+	sujungtasSarasas.push("sausis");
+
+	System.out.println(sujungtasSarasas);
+
+	String ispoppintasElementas = sujungtasSarasas.pop();
+
+	System.out.println(sujungtasSarasas);
+	System.out.println(ispoppintasElementas);

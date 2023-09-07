@@ -1,0 +1,64 @@
+LocalDateTime
+
+Sukūrimas:
+
+	LocalDateTime dabar = LocalDateTime.now(); // Gauna dabartinę datą ir laiką
+	LocalDateTime kitasLaikas = LocalDateTime.of(2023, 6, 2, 10, 30, 0); // Sukuria naują LocalDateTime objektą su nurodytais metais, mėnesiu, diena, valanda, minutė ir sekunde
+
+
+Gavimas pagal reikiamą laiko vienetą:
+
+	int metai = dabar.getYear();
+	int menuo = dabar.getMonthValue();
+	int diena = dabar.getDayOfMonth();
+	int valanda = dabar.getHour();
+	int minute = dabar.getMinute();
+	int sekunde = dabar.getSecond();
+
+Pakeitimas pagal reikiamą laiko vienetą:
+
+	LocalDateTime pakeistasLaikas = dabar.withYear(2024); // Pakeičia metus į 2024
+	LocalDateTime pakeistasLaikas = dabar.withMonth(12); // Pakeičia mėnesį į gruodį
+	LocalDateTime pakeistasLaikas = dabar.withDayOfMonth(25); // Pakeičia dieną į 25-ąją
+
+Pridėjimas arba atėmimas tam tikro laiko vieneto:
+
+	LocalDateTime poValandos = dabar.plusHours(1); // Prideda vieną valandą
+	LocalDateTime pries5Min = dabar.minusMinutes(5); // Atima penkias minutes
+
+Formatavimas į teksto reprezentaciją:
+
+	String tekstinisLaikas = dabar.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME); // Formatuoja datą ir laiką į ISO standartą (pvz.: "2023-06-02T10:30:00")
+
+//////////////////////////////////////
+
+LocalDate
+
+Sukūrimas:
+
+	LocalDate dabar = LocalDate.now(); // Gauna dabartinę datą
+	LocalDate kitasData = LocalDate.of(2023, 6, 2); // Sukuria naują LocalDate objektą su nurodytais metais, mėnesiu ir diena
+
+Gavimas pagal reikiamą laiko vienetą:
+
+	int metai = dabar.getYear();
+	int menuo = dabar.getMonthValue();
+	int diena = dabar.getDayOfMonth();
+	DayOfWeek savaitesDiena = dabar.getDayOfWeek(); // Gauna savaitės dieną (pirmadienis, antradienis, ir t.t.)
+
+Pakeitimas pagal reikiamą laiko vienetą:
+
+	LocalDate pakeistaData = dabar.withYear(2024); // Pakeičia metus į 2024
+	LocalDate pakeistaData = dabar.withMonth(12); // Pakeičia mėnesį į gruodį
+	LocalDate pakeistaData = dabar.withDayOfMonth(25); // Pakeičia dieną į 25-ąją
+
+Pridėjimas arba atėmimas tam tikro laiko vieneto:
+
+	LocalDate poMetu = dabar.plusYears(1); // Prideda vienus metus
+	LocalDate priesMenesi = dabar.minusMonths(1); // Atima vieną mėnesį
+	LocalDate poSavaites = dabar.plusWeeks(2); // Prideda dvi savaites
+	LocalDate priesDienas = dabar.minusDays(7); // Atima septynis dienas
+
+Formatavimas į teksto reprezentaciją:
+
+	String tekstinėData = dabar.format(DateTimeFormatter.ISO_LOCAL_DATE); // Formatuoja datą į ISO standartą (pvz.: "2023-06-02")

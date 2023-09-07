@@ -1,0 +1,60 @@
+Enum pavyzdys
+
+public enum Diena {
+
+	PIRMADIENIS, 
+	ANTRADIENIS, 
+	TRECIADIENIS, 
+	KETVIRTADIENIS,
+	PENKTADIENIS, 
+	SESTADIENIS, 
+	SEKMADIENIS
+}
+
+public class EnumTest {
+	public static void main(String[] args) {
+		
+		// apsirasome savaites dienos kintamaji ir jam priskiriame enum reiksme
+		Diena savaitesDiena = Diena.TRECIADIENIS;
+		
+		// enum reiksme galime atspausdinti
+		System.out.println(savaitesDiena);
+		
+		// enum reiksmes galime palyginti
+		System.out.println(Diena.TRECIADIENIS.equals(Diena.TRECIADIENIS)); // true
+		System.out.println(Diena.TRECIADIENIS.equals(Diena.PENKTADIENIS)); // false
+	}
+}
+
+//////////////////////////////////////////////////////
+
+public enum Skaicius {
+
+	VIENAS(1),
+	DU(2),
+	TRY(3),
+	KETURI(4);
+	
+	private final int numeris;
+	
+	Skaicius (int num) {
+	
+		numeris = num;
+	}
+	public int numeris() { 
+		return numeris; 
+	}
+}
+
+
+public class EnumTest {
+
+	public static void main(String[] args) {
+
+		Skaicius skaicius = Skaicius.KETURI;
+		
+		System.out.println(skaicius); // KETURI
+		System.out.println(skaicius.numeris()); // 4
+		System.out.println(Skaicius.KETURI.numeris()); // 4
+	}
+}

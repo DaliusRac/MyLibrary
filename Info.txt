@@ -1,0 +1,34 @@
+Prideti eilute
+Aritmetiniai operatoriai
+Primityvus duomenu tipai
+String
+Scanner
+Konstantos ir final
+Enum
+Loginiai operatoriai
+Switch if ir else
+Masyvai
+Ciklai
+Klases ir metodai, Struktura, Overload ir pvz
+Static
+StringBuilder
+LocaleDateTime
+"String.format"
+== vs equals
+ArrayList
+LinkedList
+HashSet
+HashMap
+Paveldimas, "Extends, super()"
+Konstruktorius
+Apstrakti klase
+Interface
+Polimorfismas
+Kompozicija vs Paveldejimas (is a, has a)
+Klasiu modifikatoriai ir pasiekiamumas
+Cast, upCast, downCast
+Null
+Exception, try, catch
+Failai serializacija
+Var args
+HTLM

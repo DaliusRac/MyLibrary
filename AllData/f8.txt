@@ -1,0 +1,27 @@
+	put(K raktas, V reikšmė): Prideda naują raktą ir reikšmę į "HashMap" arba pakeičia esamą reikšmę, jei raktas jau egzistuoja.
+	
+	get(Object raktas): Grąžina reikšmę, susijusią su nurodytu raktu.
+	
+	remove(Object raktas): Pašalina raktą ir susijusią reikšmę iš "HashMap".
+	
+	containsKey(Object raktas): Patikrina, ar nurodytas raktas yra "HashMap".
+	
+	containsValue(Object reikšmė): Patikrina, ar nurodyta reikšmė yra "HashMap".
+	
+	isEmpty(): Patikrina, ar "HashMap" yra tuščias.
+	
+	size(): Grąžina "HashMap" porų (raktas-reikšmė) skaičių.
+	
+	clear(): Išvalo "HashMap", pašalindamas visus raktus ir susijusias reikšmes.
+	
+	keySet(): Grąžina "Set" objektą, kuriame yra visi raktai iš "HashMap".
+	
+	values(): Grąžina "Collection" objektą, kuriame yra visos reikšmės iš "HashMap".
+	
+	entrySet(): Grąžina "Set" objektą, kuriame yra visos poros (raktas-reikšmė) iš "HashMap".
+	
+	putAll(Map<? extends K, ? extends V> mapa): Prideda visus raktus ir susijusias reikšmes iš nurodytos "Map" objekto į "HashMap".
+	
+	replace(K raktas, V naujaReikšmė): Pakeičia esamą reikšmę, susijusią su nurodytu raktu, nauja reikšme.
+	
+	replaceAll(BiFunction<? super K, ? super V, ? extends V> funkcija): Pakeičia visas reikšmes "HashMap" naudojant nurodytą funkciją.

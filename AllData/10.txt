@@ -1,0 +1,95 @@
+Ciklai
+
+	• Tai n kartų arba kol tenkinama sąlyga kartojami kodo blokai
+
+Ciklas FOR
+
+	for (initialization; termination; increment) {
+		statement(s)
+	}
+
+
+Ciklas FOR
+
+	for (int i = 1; i < 11; i++) {
+		System.out.println("i yra: " + i);
+	}
+	
+******** vietoje i < 11  galime rasyti i <= 10 *******
+	
+	
+Ciklas FOR EACH
+
+	int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	for (int skaicius : numbers) {
+		System.out.println("Masyvo elementas yra: " + skaicius); 
+	}
+	
+//////////////////////////////////////////////////
+**************************************************
+//////////////////////////////////////////////////
+
+
+Ciklas WHILE
+
+	while (expression) {
+	statement(s)
+	}
+
+
+Ciklas WHILE
+
+	int skaicius = 1;
+	
+	while (skaicius < 11) {
+		System.out.println("Skaicius yra: " + skaicius);
+		skaicius++; 
+	}
+	
+	//	while (true) {
+	//	// begalinis ciklas
+	//	}
+
+
+Ciklas DO-WHILE
+
+	do {
+		statement(s)
+	} while (expression);
+
+
+Ciklas DO-WHILE
+
+	int skaicius = 1;
+	do {
+		System.out.println("Skaicius yra: " + skaicius);
+		skaicius++;
+	} while (skaicius < 11);
+	
+
+BREAK
+	String[] programavimoKalbos = { "Java", "Python", "Kotlin", "Pascal", 
+			"C++", "C#", "Ruby", "C", "R", "PHP" };
+
+	for (String zodis : programavimoKalbos) {
+		if (zodis.length() < 4) {
+			break; //***** Nutraukia ciklą ir išeina iš jo *********
+
+		}
+		System.out.println(zodis);
+	}
+	
+	
+CONTINUE
+
+	String[] programavimoKalbos = { "Java", "Python", "Kotlin", "Pascal", 
+									"C++", "C#", "Ruby", "C", "R", "PHP" };
+
+	for (String zodis : programavimoKalbos) {
+		if (zodis.length() < 4) {
+			continue;				//Nebevykdo veksmų, kurie yra
+		}							//žemiau continue,
+		System.out.println(zodis);	//bet ima kitą elementą ir tęsia ciklą toliau
+
+	}

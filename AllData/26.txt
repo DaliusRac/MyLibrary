@@ -1,0 +1,46 @@
+Kompozicija vs paveldėjimas 
+
+	class A {
+	}
+	
+	class B {
+		private A kintamasisA;
+	}
+	
+Kompozicija.
+Viena klasė turi kitos klasės objektą kaip klasės kintamąjį.
+Ryšys vadinamas „has-a“
+
+
+	class A {
+	}
+	
+	class B extends A {
+	}
+	
+Paveldėjimas.
+	
+	Viena klasė paveldi kitą klasę.
+	Ryšys vadinamas „is-a“
+
+/////////////////////////////////////////////////
+
+Perrašymas vs perkrovimas 
+
+	class A {
+		int metodas() {
+			return 5;
+		}
+		// perkrovimas (angl. overloading)
+		int metodas(int k) {
+			return k + 1;
+		}
+	}
+	
+	class B extends A {
+	// perrašymas/užklojimas (angl. overriding)
+		@Override
+		int metodas() {
+			return 6;
+		}
+	}

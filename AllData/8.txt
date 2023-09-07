@@ -1,0 +1,268 @@
+Switch
+
+	public class IfTest {
+
+		public static void main(String[] args) {
+	 
+			int month = 8;
+			String monthString;
+			switch (month) {
+				 case 1: monthString = "January";
+						break;
+				 case 2: monthString = "February";
+						break;
+				 case 3: monthString = "March";
+						break;
+				 case 4: monthString = "April";
+						break;
+				 case 5: monthString = "May";
+						break;
+				 case 6: monthString = "June";
+						break;
+				 case 7: monthString = "July";
+						break;
+				 case 8: monthString = "August";
+						break;
+				 case 9: monthString = "September";
+						break;
+				 case 10: monthString = "October";
+						break;
+				 case 11: monthString = "November";
+						break;
+				 case 12: monthString = "December";
+						break;
+				 default: monthString = "Invalid month";
+						break;
+			}
+			System.out.println(monthString); 		// August
+		}
+	}
+
+////////////////////////////////////////////////////
+
+	public static void main(String[] args) {
+ 
+		String month = "March";
+		int monthNumber;
+		switch (month) {
+			 case "January" : 			monthNumber = 1;
+										break;
+			 case "February" : 			monthNumber = 2;
+										break;
+			 case "March" : 			monthNumber = 3;
+										break;
+			 // ....
+			 case "December" : 			monthNumber = 12;
+										break;
+			 default: 					monthNumber = -1;
+										break;
+		}
+		System.out.println(monthNumber); 	// 3
+	}
+ 
+//////////////////////////////////////////////////
+
+Switch
+
+	switch(kintamasis) {
+		case KONSTANTA1: 	// veiksmai, jei kintamasis == KONSTANTA1
+							break;
+		case KONSTANTA2: 	// veiksmai, jei kintamasis == KONSTANTA2
+							break;
+		default: 			// veiksmai, jei kintamasis nėra lygus nei 
+							// vienai konstantai
+							break;
+	}
+
+//////////////////////////////////////////////////
+*************************************************
+/////////////////////////////////////////////////
+
+
+
+IF
+	if (sąlyga) {
+		// veiksmai, jei sąlyga tenkinama
+	}
+
+//////////////////////////////////////////////////
+
+	IF-ELSE public class IfTest {
+
+		public static void main(String[] args) {
+		
+			int skaicius = 5;
+			
+			if (skaicius >= 0) {
+					System.out.println("Skaicius yra teigiamas");
+			} else {
+					System.out.println("Skaicius yra neigiamas");
+			}
+		}
+	}
+
+//////////////////////////////////////////////////
+
+IF-ELSE
+
+	if (sąlyga) {
+		// veiksmai, jei sąlyga tenkinama
+	} else {
+		// veiksmai, jei sąlyga netenkinama
+	}
+
+//////////////////////////////////////////////////
+
+IF-EILSEIF-ELSE 
+
+	public class IfTest {
+
+		public static void main(String[] args) {
+
+			int skaicius = 5;
+
+			if (skaicius > 0) {
+			System.out.println("Skaicius yra teigiamas");
+			} else if (skaicius == 0) {
+			System.out.println("Skaicius yra nulis");
+			} else {
+			System.out.println("Skaicius yra neigiamas");
+			}
+		}
+	}
+
+//////////////////////////////////////////////////
+
+IF-ELSEIF-ELSE
+
+	if (sąlyga1) {
+		// veiksmai, jei sąlyga1 tenkinama
+	} else if (sąlyga2) {
+		// veiksmai, jei sąlyga2 tenkinama
+	} else if (sąlyga3) {
+		// veiksmai, jei sąlyga3 tenkinama
+	} else {
+		// veiksmai, jei nei viena sąlyga netenkinama
+	}
+
+//////////////////////////////////////////////////
+
+Skliaustų { } naudojimas
+
+	public class IfTest {
+
+		public static void main(String[] args) {
+	 
+		int skaicius = 6;
+		
+		if (skaicius >= 0)
+			System.out.println("skaicius yra teigiamas");
+		 else
+			System.out.println("skaicius yra neigiamas");
+	 
+		}
+	}
+
+			*******	if (sąlyga) ***********
+						// veiksmai
+					else
+						// veiksmai
+			
+			
+//////////////////////////////////////////////////
+
+	public class IfTest {
+
+		public static void main(String[] args) {
+	 
+			int skaicius = 6;
+			
+			if (skaicius >= 0) {
+				System.out.println("skaicius yra teigiamas");
+				skaicius++;
+			 } else {
+				System.out.println("skaicius yra neigiamas");
+				skaicius--;
+			 }
+		}
+	}
+
+		******** 	if (sąlyga) {  ***********
+						// veiksmai
+						// veiksmai
+					} else {
+						// veiksmai
+						// veiksmai
+					}
+
+/////////////////////////////////////////////////
+
+IF‘ai IF‘uose
+
+	public class IfTest {
+
+		public static void main(String[] args) {
+	 
+			int skaicius = 6;
+			
+			if (skaicius >= 0) {
+				System.out.println("skaicius yra teigiamas");
+				 if (skaicius % 2 == 0) {
+					System.out.println("skaicius yra lyginis");
+					 if (skaicius < 10) {
+						System.out.println("skaicius yra mazesnis uz 10");
+					}
+				} else {
+						System.out.println("skaicius yra nelyginis");
+				}
+			} else {
+					System.out.println("skaicius yra neigiamas");
+					if (skaicius % 2 == 0) {
+						System.out.println("skaicius yra lyginis");
+					} else {
+							System.out.println("skaicius yra nelyginis");
+			}
+		}
+	 }
+	}
+
+/////////////////////////////////////////////////
+
+IF-ELSE vienoje eilutėje 
+
+	public class IfTest {
+
+		public static void main(String[] args) {
+	 
+			int skaicius = 6;
+			
+			String rezultatas;
+			
+			if (skaicius >= 0) {
+				rezultatas = "teigiamas";
+			} else {
+				rezultatas = "neteigiamas";
+			}
+	 
+			System.out.println(rezultatas);
+	 
+		}
+	}
+
+**********************************************
+
+	public class IfTest {
+
+		public static void main(String[] args) {
+	 
+			int skaicius = 6;
+			
+			String rezultatas = skaicius >= 0 ? "teigiamas" : "neigiamas";
+	 
+			System.out.println(rezultatas);
+		}
+	}
+
+					*********************************************************
+					kintamasis = salyga ? rezultatasJeiTaip : rezultatasJeiNe
+					*********************************************************

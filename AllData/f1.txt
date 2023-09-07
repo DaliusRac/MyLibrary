@@ -1,0 +1,28 @@
+klasės metodai:
+
+	• .substring()			• Grąžina naują eilutę kopijuojant nurodytų simbolių seką.
+	• .charAt(i)			• Grąžina simbolį esantį i-ojoje pozicijoje.
+	• .replace()			• Grąžina naują eilutę, kurioje zodis1 eilutėje visi senaChar simboliai pakeisti naujaChar simboliu
+	
+				**** String zodis2 = zodis1.replace(senaChar, nujaChar); ****
+	
+	• .indexOf()			• Grąžina pirma sutiktą nurodyto simbolio pozicijoją.
+	
+	• .equals()				• boolean b = zodis1.equals(zodis2);
+							• grąžina true jei zodis1 sutampa su zodis2
+							
+							• boolean b = zodis1.equalsIgnoreCase(zodis2);
+							• grąžina true jei zodis1 sutampa su zodis2 ignoruojant 
+							didžiųjų/mažųjų raidžių skirtumą
+
+	• .compareTo()			• int diff = zodis1.compareTo(zodis2);
+							• grąžina “skirtumą” zodis1 - zodis2
+							• int diff = zodis1.compareToIgnoreCase(zodis2);
+							• grąžina “skirtumą” zodis1 - zodis2, ignoruojant didžiųjų/mažųjų skirtumą
+
+	
+	• .trim()				• Grąžina naują eilutę sudarytą iš nurodyto String'o atmetus jos pradžioje ir gale esančius tarpus. Viduriniai tarpai neatmetami.
+
+	• .toLowerCase()		• grąžina naują eilutę pakeičiant nurodyto String'o mažąsias (didžiąsias) 
+	• .toUpperCase()						raides didžiosiomis (mažosiomis)
+	

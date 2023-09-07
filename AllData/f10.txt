@@ -1,0 +1,68 @@
+
+Anotations for Spring
+
+*********************************************mvc Model View Controller**************************************
+
+1 @RestController 
+	Pavercia klase i kontroleri
+
+2 @GetMapping 
+	I get uzklausa atsakinejantis endpoint
+	
+1. `@SpringBootApplication`: 
+	Ši anotacija yra viena pagrindinių Spring Boot programose. 
+	Ji yra patogus būdas naudoti tris kitas anotacijas: `@Configuration`, `@EnableAutoConfiguration` ir `@ComponentScan`.
+
+ 
+
+2. `@EnableAutoConfiguration`: 
+	Tai svarbi anotacija, kuri leidžia automatiškai konfigūruoti Spring kontekstą, remiantis priklausomybių sąrašu.
+
+ 
+
+3. `@Configuration`: 
+	Ši anotacija pažymi klase kaip konfigūracinę klasę, 
+	kurioje galima apibrėžti `@Bean` anotaciją turinčius metodus.
+
+ 
+
+4. `@ComponentScan`: 
+	Ši anotacija nurodo Spring Boot programai, kur ieškoti komponentų, konfigūracijos ir kitų Spring anotacijų.
+
+ 
+
+5. `@Bean`: 
+	Ši anotacija naudojama metodams, kurie kuria ir konfigūruoja Spring Bean'us. 
+	Metodas, pažymėtas šia anotacija, bus iškviestas, ir jo grąžinama reikšmė bus pridėta prie Spring konteksto.
+
+ 
+
+6. `@RestController`: 
+	Ši anotacija pažymi klasę kaip RESTful kontrolerį. 
+	Tai yra kombinacija `@Controller` ir `@ResponseBody` anotacijų.
+
+ 
+
+7. `@RequestMapping`: 
+	Ši anotacija nurodo, kaip URL yra susiję su kontrolerio metodu. 
+	Jis gali būti naudojamas ant klasės ar metodo.
+
+ 
+
+8. `@Autowired`: 
+	Ši anotacija naudojama automatiniam priklausomybių inicijavimui per Spring IoC konteinerį.
+
+ 
+
+9. `@Service`, `@Repository`, `@Controller`: 
+	Šios anotacijos yra specifiniai `@Component` variantai, kurie yra naudojami pažymėti komponentus, atitinkančius sluoksnių modelį.
+
+ 
+
+10. `@PathVariable`: 
+	Ši anotacija naudojama pažymėti metodo parametrą, kuris atitinka URI šablone esantį kintamąjį.
+
+ 
+
+11. `@RequestParam`: 
+	Ši anotacija naudojama pažymėti metodo parametrą, kuris atitinka užklausos parametrą.

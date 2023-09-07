@@ -1,0 +1,77 @@
+==
+
+	• Naudojama palyginti:
+	• Skaičiams (int, long, short, byte)
+	• Simboliams (char)
+	• Loginiams kintamiesiems (boolean)
+	• Objektų nuorodoms
+
+
+Su == Lyginamos primityviųjų tipų reikšmės
+
+
+== su String
+
+	String a = new String("Namas");
+	String b = new String("Namas");
+	String c = new String("Miestas");
+	
+	System.out.println(a == b); // false
+	System.out.println(a == c); // false
+	System.out.println(b == c); // false
+	 
+	b = a;
+	System.out.println(a == b); // true
+	System.out.println(a == c); // false
+	System.out.println(b == c); // false
+	
+
+equals() su String 
+
+	String a = new String("Namas");
+	String b = new String("Namas");
+	String c = new String("Miestas");
+	System.out.println(a.equals(b)); // true
+	System.out.println(a.equals(c)); // false
+	System.out.println(b.equals(c)); // false
+	 
+			b = a;
+			
+	System.out.println(a.equals(b)); // true
+	System.out.println(a.equals(c)); // false
+	System.out.println(b.equals(c)); // false
+	
+
+== su Objektais 
+
+	Tankas a = new Tankas();
+	Tankas b = new Tankas();
+	Tankas c = new Tankas();
+
+	System.out.println(a == b); // false
+	System.out.println(a == c); // false
+	System.out.println(b == c); // false
+
+	b = a;
+
+	System.out.println(a == b); // true
+	System.out.println(a == c); // false
+	System.out.println(b == c); // false
+	
+equals() su Objektais 
+
+	Tankas a = new Tankas();
+	Tankas b = new Tankas();
+	Tankas c = new Tankas();
+	
+	System.out.println(a.equals(b)); // false
+	System.out.println(a.equals(c)); // false
+	System.out.println(b.equals(c)); // false
+	 
+	b = a;
+	
+	System.out.println(a.equals(b)); // true
+	System.out.println(a.equals(c)); // false
+	System.out.println(b.equals(c)); // false
+	
+	

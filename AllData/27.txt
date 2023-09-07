@@ -1,0 +1,48 @@
+Modifikatorius "protected" 
+
+	• Leidžia panaudoti protected narį tik išvestinėse klasėse
+	• Išvestinėse klasėje narių matomumas negali būti apribotas.
+	• Galime tik sumažinti apribojimą:
+
+
+	Tėvinė klasė 		Vaikinė klasė
+	private 				-
+						(negalime perrašyti tokio nario)
+	-----------------------------------------
+	(default) 			(default)
+						protected
+						public
+	--------------------------------------
+	protected 			protected
+						public
+	-------------------------------------
+	public 				public
+
+
+
+Kalsės laukų pasiekiamumas
+
+
+
+Modifikatorius 	Tos pačios		klasės nariai	To paties 			To paties			Vaikinės
+												paketo klasės		paketo 				klasės nariai
+																	vaikinės 			Visos kitos
+																	klasės nariai		klasės
+																				
+private 			Taip 			Ne 				Ne 					Ne 					Ne
+	
+					Taip 			Taip 			Taip 				Ne 					Ne
+
+protected 			Taip 			Taip 			Taip 				Taip				Ne
+
+public 				Taip 			Taip 			Taip 				Taip 				Taip
+
+
+
+Konstruktoriai vaikinėse klasėse
+
+	• Išreikštinai arba neišreikštinai kviečia bazinės klasės konstruktorių.
+	• super() - galimybė nurodyti, kuris bazinės klasės konstruktorius bus 
+	kviečiamas. Gali būti tik pirmuoju sakiniu.
+	• Konstravimo seka (rekursyvus apibrėžimas). Pirma konstruojama objekto tėvo 
+	klasės dalis, po to vaiko (vaiko laukų iniciavimas, vaiko konstruktorius). 

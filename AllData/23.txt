@@ -1,0 +1,77 @@
+Kas yra abstrakti klasė?
+
+	• Abstrakti klasė yra tokia klasė, kuri yra pažymėta žodžiu abstract.
+	• abstract class Animal {}
+	• Tokia klasė gali (bet nebūtinai) turėti abstrakčių metodų, kurie 
+	neturi kūno.
+	• Įprasta (ne abstrakti) klasė negali turėti abstrakčių metodų. Visi jos 
+	metodai privalo būti su kūnu
+	• Jei Animal yra abstrakti klasė, tai jos pagrindu negalime kurti 
+	objekto, t.y. negalime daryti new Animal();
+
+
+Abstrakti klasė
+
+	• Sakykime turime abstrakčią klasę Gyvunas su abstrakčiu metodu 
+	skleidžiamasGarsas();
+	• Ir turime klases Suo, Katinas ir Bite, kurių tėvinė klasė yra Gyvūnas.
+	• Tada šios klasės privalo užkloti tėvinės klasės abstraktų metodą 
+	skleidžiamasGarsas();
+
+
+	abstract class Gyvunas {
+		public abstract String skleidziamasGarsas();
+	}
+	
+	class Suo extends Gyvunas {
+		@Override
+		public String skleidziamasGarsas() {
+		return "Au";
+		}
+	}
+	
+	class Katinas extends Gyvunas {
+		@Override
+		public String skleidziamasGarsas() {
+		return "Miau";
+		}
+	}
+	
+	class Bite extends Gyvunas {
+		@Override
+		public String skleidziamasGarsas() {
+		return "Bzzz";
+		}
+	}
+	
+	public class GyvunasAbstract {
+		public static void main(String[] args) {
+			Gyvunas suo = new Suo();
+			Gyvunas katinas = new Katinas();
+			Gyvunas bite = new Bite();
+			
+			System.out.println("Suns garsas: " + suo.skleidziamasGarsas());
+			System.out.println("Katino garsas: " + katinas.skleidziamasGarsas());
+			System.out.println("Bites garsas: " + bite.skleidziamasGarsas());
+		}
+	}
+	
+	
+	****	Suns garsas: Au		*****
+			Katino garsas: Miau
+			Bites garsas: Bzzz
+
+
+Abstrakčios klasės taisyklės
+
+	• Kai klasės metodo realizacija nėra žinoma ar negali būti 
+	įgyvendinama toje klasėje, tada reikia klasę deklaruoti kaip 
+	abstract ir aprašyti abstraktų metodą.
+	• Paveldinčios klasės privalo realizuoti tėvinėje klasėje esantį 
+	abstraktų metodą.
+	• Jei vaikinė klasė metodo nerealizuoja, tada ji taip pat privalo būti 
+	deklaruota kaip abstrakti.
+	• Abstraktus metodas neturi kūno
+	• Abstraktaus metodo aprašas visada baigiasi kabliataškiu ;
+
+

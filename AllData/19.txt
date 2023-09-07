@@ -1,0 +1,73 @@
+Aibė
+
+	• Aibė negarantuoja, kad elementai jos viduje visada bus išdėstyti ta 
+	pačia tvarka
+	• Aibė neleidžia pasikartojančių reikšmių. Jas galime dėti, bet nuo to 
+	aibė nepasikeis (tiksliau bus ta pati reikšmė perrašyta nauja), o ir 
+	klaidos nebus
+	• Galime įdėti null reikšmes
+
+
+Aibė 
+
+	// Aibes sukurimas
+	HashSet<String> aibe = new HashSet<String>();
+	
+	// Elementu idejimas i aibe
+	aibe.add("Apple");
+	aibe.add("Mango");
+	aibe.add("Grapes");
+	aibe.add("Orange");
+	aibe.add("Fig");
+	
+	System.out.println(aibe);
+	
+	// Dedame pasikartojancius el., bet niekas nepasikeis
+	aibe.add("Apple");
+	aibe.add("Mango");
+	
+	System.out.println(aibe);
+
+
+Iteravimas 
+
+	HashSet<String> hset = new HashSet<String>();
+
+	// add elements to HashSet
+	hset.add("Chaitanya");
+	hset.add("Rahul");
+	hset.add("Tim");
+	hset.add("Rick");
+	hset.add("Harry");
+
+	Iterator<String> it = hset.iterator();
+	while (it.hasNext()) {
+		System.out.println(it.next());
+	}
+
+
+Iteravimas II 
+
+	HashSet<String> hset = new HashSet<String>();
+
+	// add elements to HashSet
+	hset.add("Chaitanya");
+	hset.add("Rahul");
+	hset.add("Tim");
+	hset.add("Rick");
+	hset.add("Harry");
+
+	for (String temp : hset) {
+		System.out.println(temp);
+	}
+
+
+HashSet metodai
+
+	• boolean add(Element e): įdeda elementą e į aibę.
+	• void clear(): ištrina visus elementus iš aibės.
+	• boolean contains(Object o): patikrina, ar objektas (elementas) o yra aibėje.
+	• boolean isEmpty(): grąžina true, jei aibė yra tuščia.
+	• int size(): grąžina aibės elementų skaičių, t.y. aibės dydį.
+	• boolean remove(Object o): ištrina elementą o iš aibės
+

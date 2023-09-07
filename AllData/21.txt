@@ -1,0 +1,345 @@
+Kas yra paveldėjimas?
+
+	• Procesas, kai viena klasė paveldi kitos klasės kintamuosius bei metodus, yra 
+	vadinama paveldėjimu (inheritance).
+	• Paveldėjimo tikslas – sumažinti to paties Java kodo rašymą kelis kartus ir 
+	perpanaudoti jau turimą funkcionalumą.
+	• Klasė, kuri paveldi kitos klasės funkcionalumą yra vadinama paveldinčia klase, 
+	išvestine klases, vaikine klase arba sub klase (child class, sub clas, derived
+	class)
+	• Klasė, kurios funkcionalumą paveldi kita klasė, yra vadinama tėvine klase, 
+	bazine klase arba super klase (parent class, super class, base class)
+	• Vaikinė klasė praplečia tėvinę klasę pridėdama naujo funkcionalumo
+	• Visos klasės tiesiogiai ar netiesiogiai paveldi klasės java.lang.Object savybes
+
+
+Paveldėjimas
+
+	• Norėdami parodyti, kad klasė paveldi kitos klasės funkcionalumą, 
+	vaikinėje klasėje naudojame žodį „extends“.
+	
+	class A {
+	...
+	}
+	class B extends A {
+	...
+	}
+
+
+
+
+	public class Asmuo {
+		protected String vardas;
+		protected String pavarde;
+		protected String asmensKodas;
+		//...konstruktorius/getteriai/setteriai...
+	}
+
+	class Studentas extends Asmuo {
+		protected String studentoPazymejimoNr;
+		//...konstruktorius/getteriai/setteriai...
+	}
+
+	class Darbuotojas extends Asmuo {
+		protected String socDraudimoNr;
+		//...konstruktorius/getteriai/setteriai...
+	}
+
+	class ImonesXDarbuotojas extends Darbuotojas {
+		protected String xNr;
+		//...konstruktorius/getteriai/setteriai...
+	}
+	
+	
+Klasė Asmuo 
+
+	class Asmuo {
+		protected String vardas;
+		protected String pavarde;
+		protected String asmensKodas;
+		public Asmuo(String vardas, String pavarde, String asmensKodas) {
+			this.vardas = vardas;
+			this.pavarde = pavarde;
+			this.asmensKodas = asmensKodas;
+		}
+		public String getVardas() {
+			return vardas;
+		}
+		public void setVardas(String vardas) {
+			this.vardas = vardas;
+		}
+		public String getPavarde() {
+			return pavarde;
+		}
+		public void setPavarde(String pavarde) {
+			this.pavarde = pavarde;
+		}
+		public String getAsmensKodas() {
+			return asmensKodas;
+		}
+		public void setAsmensKodas(String asmensKodas) {
+			this.asmensKodas = asmensKodas;
+		}
+	}
+	
+	*****	Ši klasė nieko nepaveldi	*******
+			ir turi vardą, pavardę ir 
+			asmens kodą
+
+
+Klasė Studentas 
+
+	class Studentas extends Asmuo {
+		protected String studentoPazymejimoNr;
+		public Studentas(String vardas, String pavarde, 
+			String asmensKodas, 
+			String studentoPazymejimoNr) {
+			super(vardas, pavarde, asmensKodas);
+			this.studentoPazymejimoNr = studentoPazymejimoNr;
+		}
+		public String getStudentoPazymejimoNr() {
+			return studentoPazymejimoNr;
+		}
+		public void setStudentoPazymejimoNr(String studentoPazymejimoNr) {
+			this.studentoPazymejimoNr = studentoPazymejimoNr;
+		}
+	}
+	
+	*****	Ši klasė paveldi visas klasės	****
+			Asmuo savybes. Klasė turi vardą,
+			pavardę, asmens kodą ir studento
+			pažymėjimo numerį.
+
+			Norėdami iškviesti tėvinės 
+			klasės konstruktorių rašome 
+			super()
+			
+			
+Klasė Darbuotojas 
+
+	class Darbuotojas extends Asmuo {
+		protected String socDraudimoNr;
+		public Darbuotojas(String vardas, String pavarde, 
+			String asmensKodas, 
+			String socDraudimoNr) {
+			super(vardas, pavarde, asmensKodas);
+			this.socDraudimoNr = socDraudimoNr;
+		}
+		public String getSocDraudimoNr() {
+			return socDraudimoNr;
+		}
+		public void setSocDraudimoNr(String socDraudimoNr) {
+			this.socDraudimoNr = socDraudimoNr;
+		}
+	}
+	
+	*****	Ši klasė paveldi visas klasės	****
+			Asmuo savybes. Klasė turi vardą,
+			pavardę, asmens kodą ir socialinio
+			draudimo numerį.
+
+
+Klasė ImonesXDarbuotojas 
+
+	class ImonesXDarbuotojas extends Darbuotojas {
+		protected String xNr;
+		public ImonesXDarbuotojas(String vardas, String pavarde, 
+			String asmensKodas, 
+			String socDraudimoNr, 
+			String xNr) {
+			super(vardas, pavarde, asmensKodas, socDraudimoNr);
+			this.xNr = xNr;
+		}
+		public String getxNr() {
+			return xNr;
+		}
+		public void setxNr(String xNr) {
+			this.xNr = xNr;
+		}
+	}
+	
+	******	Ši klasė paveldi visas klasės	*****
+			Darbuotojas savybes. Klasė turi vardą,
+			pavardę, asmens kodą, socialinio
+			draudimo numerį ir x numerį.
+
+
+	Asmuo asmuo = new Asmuo("Petras", "Petraitis", "39901010000");
+	System.out.println(String.format("Asmuo: %s %s %s", asmuo.getVardas(), 
+		asmuo.getPavarde(), asmuo.asmensKodas));
+	
+	Studentas studentas = new Studentas("Antanas", "Antanaitis", "39901011111", "123456");
+	System.out.println(String.format("Studentas: %s %s %s %s", studentas.getVardas(), 
+		studentas.getPavarde(), studentas.asmensKodas, 
+		studentas.getStudentoPazymejimoNr()));
+	
+	Darbuotojas darbuotojas = new Darbuotojas("Mantas", "Mantauskas", "39901012222", "333");
+	System.out.println(String.format("Darbuotojas: %s %s %s %s", darbuotojas.getVardas(), 
+		darbuotojas.getPavarde(), darbuotojas.asmensKodas, 
+		darbuotojas.getSocDraudimoNr()));
+	
+	ImonesXDarbuotojas xDarbuotojas = new ImonesXDarbuotojas("Onute", "Mantauskiene", 
+		"49901012222", "444", "X000");
+	System.out.println(String.format("ImonesXDarbuotojas: %s %s %s %s %s", 
+		xDarbuotojas.getVardas(), 
+		xDarbuotojas.getPavarde(), 
+		xDarbuotojas.getAsmensKodas(), 
+		xDarbuotojas.getSocDraudimoNr(), 
+		xDarbuotojas.getxNr()));
+		
+		***	Asmuo: Petras Petraitis 39901010000	****
+			Studentas: Antanas Antanaitis 39901011111 123456
+			Darbuotojas: Mantas Mantauskas 39901012222 333
+			ImonesXDarbuotojas: Onute Mantauskiene 49901012222 444 X000
+
+
+Klasė Asmuo class 
+	Asmuo {
+		protected String vardas;
+		protected String pavarde;
+		protected String asmensKodas;
+			public Asmuo(String vardas, String pavarde, String asmensKodas) {
+			this.vardas = vardas;
+			this.pavarde = pavarde;
+			this.asmensKodas = asmensKodas;
+		}
+		public String getInfo() {
+			return String.format("%s-%s-%s", vardas, pavarde, asmensKodas);
+		}
+	}
+	
+	***** Metodas getInfo() grąžina suformuotą String eilutę iš ******
+			klasės Asmuo kintamųjų reikšmių
+
+
+Klasė Studentas 
+
+	class Studentas extends Asmuo {
+		protected String studentoPazymejimoNr;
+		public Studentas(String vardas, String pavarde, 
+			String asmensKodas, 
+			String studentoPazymejimoNr) {
+			super(vardas, pavarde, asmensKodas);
+			this.studentoPazymejimoNr = studentoPazymejimoNr;
+		}
+		@Override
+		public String getInfo() {
+			return String.format("%s", studentoPazymejimoNr);
+		}
+	}
+	
+		****	Metodas getInfo() užkloja iš klasės	****
+				Asmuo paveldėtą metodą su tuo pačiu
+				pavadinimu
+
+
+Klasė Darbuotojas 
+
+	class Darbuotojas extends Asmuo {
+		protected String socDraudimoNr;
+		public Darbuotojas(String vardas, String pavarde, 
+			String asmensKodas, String socDraudimoNr) {
+			super(vardas, pavarde, asmensKodas);
+			this.socDraudimoNr = socDraudimoNr;
+		}
+		
+		@Override
+		public String getInfo() {
+			return String.format("%s", socDraudimoNr);
+		}
+	}
+	
+	****	Metodas getInfo() užkloja iš klasės	****
+			Asmuo paveldėtą metodą su tuo pačiu
+			pavadinimu
+
+
+Klasė ImonesXDarbuotojas 
+
+	class ImonesXDarbuotojas extends Darbuotojas {
+		protected String xNr;
+		public ImonesXDarbuotojas(String vardas, String pavarde, 
+			String asmensKodas, 
+			String socDraudimoNr, String xNr) {
+			super(vardas, pavarde, asmensKodas, socDraudimoNr);
+			this.xNr = xNr;
+		}
+		
+		@Override
+		public String getInfo() {
+			return String.format("%s", xNr);
+		}
+	}
+	
+	*****	Metodas getInfo() užkloja iš klasės	*****
+			Darbuotojas paveldėtą metodą su tuo 
+			pačiu pavadinimu
+
+
+	Asmuo asmuo = new Asmuo("Petras", "Petraitis", "39901010000");
+	System.out.println(asmuo.getInfo());
+	
+	Studentas studentas = new Studentas("Antanas", "Antanaitis", "39901011111", "123456");
+	
+	System.out.println(studentas.getInfo());
+	
+	Darbuotojas darbuotojas = new Darbuotojas("Mantas", "Mantauskas", "39901012222", "333");
+	
+	System.out.println(darbuotojas.getInfo());
+	
+	ImonesXDarbuotojas xDarbuotojas = new ImonesXDarbuotojas("Onute", 
+													"Mantauskiene", "49901012222", 
+													"444", "X000");
+	System.out.println(xDarbuotojas.getInfo());
+	
+	****	Petras-Petraitis-39901010000	*****
+			123456
+			333
+			X000
+
+
+Vaikinės klasės metodas kviečia tėvinės klasės metodą
+
+	• Galime vaikinėje klasėje išreikštinai iškviesti tėvinės klasės metodą
+	• Tam naudojame super
+	• Į kiekvienos išvestinė klasės getInfo metodą pridėkime
+		• super.getInfo()
+		• Pvz. return String.format("%s-%s", super.getInfo(), studentoPazymejimoNr);
+	• Tada progama spausdins:
+		Petras-Petraitis-39901010000
+		Antanas-Antanaitis-39901011111-123456
+		Mantas-Mantauskas-39901012222-333
+		Onute-Mantauskiene-49901012222-444-X000
+
+
+	Asmuo asmuo = new Asmuo(...)
+	Studentas studentas = new Studentas(...)
+	Darbuotojas darbuotojas = new Darbuotojas(...)
+	ImonesXDarbuotojas xDarbuotojas = new ImonesXDarbuotojas(...)
+
+	galime pakeisti į
+
+	Asmuo asmuo = new Asmuo(...)
+	Asmuo studentas = new Studentas(...)
+	Asmuo darbuotojas = new Darbuotojas(...)
+	Asmuo xDarbuotojas = new ImonesXDarbuotojas(...)
+
+	ir programos veikimas nepasikeis, nes studentas yra tuo pačiu asmuo, xDarbuotojas irgi yra 
+	asmuo. Kai kviesime getInfo() metodą Java supras, kad reikia kviesti vaikinės klasės metodą, jei jis 
+	yra užklotas.
+
+/////////////////////////////////////////////////
+
+Objekto tipo nustatymas instanceof
+
+	Alyvinis alyvObuol = new Alyvinis();
+	alyvObuol instanceof Alyvinis // true
+	alyvObuol instanceof Obuolys // true
+	alyvObuol instanceof String // false
+	
+	Obuolys obuol = new Obuolys;
+	obuol instanceof Obuolys // true
+	Obuol instanceof Alyvinis // false
+
+
+

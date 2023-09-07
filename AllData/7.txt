@@ -1,0 +1,76 @@
+Loginiai operatoriai
+
+boolean pirmas = true;
+boolean antras = false;
+
+|	Operatorius 	Pavadinimas 		Pavyzdys 			Rezultatas
+|----------------------------------------------------------------------------------------------------------------
+|	! 			|	Not 			|	!pirmas 		 |	false, nes true keičiame priešingu					|
+|----------------------------------------------------------------------------------------------------------------
+|	== 			|	Equal to 		|	pirmas == antras |	false, nes pirmas nėra lygus antram					|
+|----------------------------------------------------------------------------------------------------------------
+|	!= 			|	Not equal to 	|	pirmas != antras |	true, nes pirmas nėra lygus antram					|
+|----------------------------------------------------------------------------------------------------------------
+|	&& ir & 	|	Conditional-AND |	pirmas && antras |	false, nes abu nėra true							|
+|----------------------------------------------------------------------------------------------------------------
+|	|| ir | 	|	Conditional-OR 	|	pirmas || antras |	true, nes bent vienas iš abiejų yra true			|
+|----------------------------------------------------------------------------------------------------------------
+|	^ 			|	Exclusive OR 	|	pirmas ^ antras  |	true, jei vienas ir TIK vienas iš dviejų yra true	|
+-----------------------------------------------------------------------------------------------------------------
+
+Loginis operatorius !
+
+	! 	true 		false
+		false 		true
+	
+	
+Loginis operatorius ==
+
+	== 		true 	false
+	true 	true 	false
+	false 	false 	true
+
+
+Loginis operatorius !=
+
+	!= 		true 	false
+	true 	false 	true
+	false 	true 	false
+
+
+Loginis operatorius &&
+
+	&& 		true 	false
+	true 	true 	false
+	false 	false 	false
+
+
+false && true 	antros pusės netikrina, jei pirmoji yra false
+false & true 	tikrina antrą pusę net, jei pirmoji yra false
+
+
+Loginis operatorius ||
+
+	|| 		true 	false
+	true 	true 	true
+	false 	true 	false
+	false || true 	antros pusės netikrina, jei pirmoji yra true
+	false | true 	tikrina antrą pusę net, jei pirmoji yra true
+
+Loginis operatorius ^
+
+	^ 		true 	false
+	true 	false 	true
+	false 	true 	false
+
+
+Loginių operatorių pavyzdžiai Javoje
+
+	boolean pirmas = true;
+	boolean antras = false;
+ 
+	System.out.println(!pirmas); 					// false
+	System.out.println(pirmas && antras); 			// false
+	System.out.println(false || true); 				// true
+	System.out.println(true ^ true); 				// false
+	System.out.println(pirmas && !antras | false); 	// true

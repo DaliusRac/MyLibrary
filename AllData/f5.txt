@@ -1,0 +1,33 @@
+	Pridėti elementą: add(elementas) - prideda elementą į ArrayList pabaigą. Pavyzdžiui: ArrayList<String> sarasas = new ArrayList<>(); sarasas.add("Pirmas");
+
+	Gauti elementą: get(indexas) - grąžina elementą, esantį nurodyto indekso pozicijoje. Pavyzdžiui: String elementas = sarasas.get(0);
+
+	Atnaujinti elementą: set(indexas, elementas) - pakeičia elementą, esantį nurodyto indekso pozicijoje, nauju elementu. Pavyzdžiui: sarasas.set(0, "Naujas");
+
+	Pašalinti elementą: remove(indexas) - pašalina elementą, esantį nurodyto indekso pozicijoje. Pavyzdžiui: sarasas.remove(0);
+
+	Patikrinti ar yra elementas: contains(elementas) - patikrina, ar ArrayListe yra nurodytas elementas. Grąžina true, jei elementas yra, ir false, jei nėra. Pavyzdžiui: boolean yraElementas = sarasas.contains("Pirmas");
+
+	Gauti dydį: size() - grąžina ArrayList dydį, t. y. joje esančių elementų skaičių. Pavyzdžiui: int dydis = sarasas.size();
+
+	Patikrinti ar sąrašas yra tuščias: isEmpty() - patikrina, ar ArrayList yra tuščias. Grąžina true, jei sąrašas yra tuščias, ir false, jei ne. Pavyzdžiui: boolean arTuscias = sarasas.isEmpty();
+	
+	
+	Iteravimas per sąrašą: Galima naudoti ciklus, pvz., for arba foreach, norint peržiūrėti visus sąrašo elementus. Pavyzdžiui:
+	
+	for (String elementas : sarasas) {
+    
+	System.out.println(elementas);
+	}
+	
+	Išvalyti sąrašą: clear() - ištrina visus elementus iš ArrayList ir padaro jį tuščią. Pavyzdžiui: sarasas.clear();
+
+	Patikrinti indeksą: indexOf(elementas) - grąžina pirmojo pasitaikančio nurodyto elemento indeksą. Jei elemento nėra sąraše, grąžinamas -1. Pavyzdžiui: int indeksas = sarasas.indexOf("Pirmas");
+
+	Patikrinti paskutinį indeksą: lastIndexOf(elementas) - grąžina paskutinio pasitaikančio nurodyto elemento indeksą. Jei elemento nėra sąraše, grąžinamas -1. Pavyzdžiui: int paskutinisIndeksas = sarasas.lastIndexOf("Pirmas");
+
+	Gauti dalinį sąrašą: subList(nuo, iki) - grąžina dalinį sąrašą, kuris apima elementus nuo nurodyto indekso (įskaitant) iki nurodyto indekso (neįskaitant). Pavyzdžiui: ArrayList<String> dalinisSarasas = sarasas.subList(0, 3);
+
+	Konvertuoti į masyvą: toArray() - konvertuoja ArrayList į masyvą. Pavyzdžiui: String[] masyvas = sarasas.toArray(new String[0]);
+
+	Pridėti visas kitas kolekcijos elementus: addAll(kolekcija) - prideda visas elementus iš nurodytos kolekcijos į ArrayList. Pavyzdžiui: sarasas.addAll(kitasSarasas);
